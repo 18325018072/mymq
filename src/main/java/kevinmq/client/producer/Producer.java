@@ -12,6 +12,7 @@ import java.util.*;
 
 /**
  * 消息发送者
+ * 没有绑定关系，每次发送前都要查询
  * @author Kevin2
  */
 public class Producer extends Client implements SendMessage{

@@ -40,11 +40,13 @@ public class MessageProcessor {
     }
 
     /**
-     * 消费消息
+     * 取出一个线程，来消费消息
      */
     public void process(Message message) {
         threadPool.execute(() -> {
+            //消费
             ConsumeStatus res = messageListener.consumeMessage(message);
+            //消费结果处理
             if (res == ConsumeStatus.Consume_Fail) {
                 Store.getStore().save(new Record(consumerName, "Fail to consume", message));
             }else if (res==ConsumeStatus.Consume_Success){

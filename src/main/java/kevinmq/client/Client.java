@@ -6,6 +6,7 @@ import kevinmq.server.nameserver.NameServer;
 import lombok.Data;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -17,13 +18,8 @@ import java.util.Set;
     /**
      * 本地缓存的 topic 路由信息
      */
-    protected final List<BrokerInfo> brokerInfo=new ArrayList<>();
-
-    /**
-     * Consumer要发送 Set<SubscriptionData> subscriptionDataSet 订阅消息。
-     * Producer发送信息支持事务，就不发送了
-     */
-    protected void sendHeartbeatToAllBroker(){}
+    protected
+    Set<BrokerInfo> brokerInfo=new HashSet<>();
 
     /**
      * 寻找 topic、tag 对应的 broker，找不到则返回null
@@ -32,7 +28,7 @@ import java.util.Set;
         Broker broker = findLocalBrokerByTopicTag(topic,tag);
         if (broker==null) {
             //本地找不到，去NameServer找
-            BrokerInfo brokerInfo = NameServer.getNameServer().findBrokerByTopicTag(topic, tag);
+            BrokerInfo brokerInfo = NameServer.getNameServer().findBrokerInfoByTopicTag(topic, tag);
             if (brokerInfo!=null){
                 //本地没找到，而nameserver找到了，则添加到本地缓存
                 this.brokerInfo.add(brokerInfo);

@@ -19,7 +19,10 @@ public class ConsumerDataManager {
     private String consumerName = "Default Consumer";
 
     public void addSubscription(String topic, String subExpression) {
-        SubscriptionData topicSubs = subscriptionMap.putIfAbsent(topic, new SubscriptionData(topic, subExpression));
-        topicSubs.addSubscription(subExpression);
+        if (subscriptionMap.containsKey(topic)) {
+            subscriptionMap.get(topic).addSubscription(subExpression);
+        } else {
+            subscriptionMap.put(topic, new SubscriptionData(topic, subExpression));
+        }
     }
 }

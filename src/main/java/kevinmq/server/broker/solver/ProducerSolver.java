@@ -16,6 +16,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 /**
+ * 处理Broker的 producer 相关事务
  * @author Kevin2
  */
 public class ProducerSolver {

@@ -8,9 +8,10 @@ import kevinmq.server.broker.data.ConsumeQueue;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentMap;
-import java.util.function.BiConsumer;
+import java.util.function.BiFunction;
 
 /**
+ * 处理Broker的consumer相关事务
  * @author Kevin2
  */
 public class ConsumerSolver {
@@ -19,6 +20,7 @@ public class ConsumerSolver {
      * {@code 对应关系：Consumer-list<topic,tag>-list<queue>}
      */
     private Map<Consumer, List<ConsumeQueue>> subTable=new HashMap<>();
+    private Map<Consumer,Integer> consumerHP=new HashMap<>();
     /**
      * 所有发送者，与 queue 一一对应
      */
@@ -32,48 +34,45 @@ public class ConsumerSolver {
         //解析data，更新注册表
         flushSubTable(consumer, data);
         //调整senders
-        flushSenderTable(consumer);
+        flushSenderTable();
+        //心跳记录❥(^_-)
+        consumerHP.compute(consumer, (consumer1, integer) -> integer + 1);
     }
 
     /**
      * 更新senderTable
-     *
-     * @param consumer
      */
-    private void flushSenderTable(Consumer consumer) {
-        //移除senders的退休成员：consumer不再需要的占位
-        Collection<QueueSender> senders = senderTable.values();
-        for (QueueSender sender : senders) {
-            List<Consumer> senderConsumerList = sender.getConsumerList();
-            //如果某个sender包括该consumer，判断是否保留
-            if (senderConsumerList.contains(consumer) && !subTable.get(consumer).contains(sender.getQueue())) {
-                //不该继续存在
-                senderConsumerList.remove(consumer);
-            }
-        }
-        //根据allSubQueues除去senders中无consumer的queue
-        Collection<List<ConsumeQueue>> listCollection = subTable.values();
+    private void flushSenderTable() {
+        //1.移除senders的退休成员：consumer不再需要的占位
+        removeUselessConsumerFromSender();
+        //2.根据allSubQueues除去senders中无consumer的queue
+        Set<ConsumeQueue> senderQueues = senderTable.keySet();
+
+        //所有被订阅的queue
         List<ConsumeQueue> allSubQueues = new ArrayList<>();
-        for (List<ConsumeQueue> queueList : listCollection) {
+        for (List<ConsumeQueue> queueList : subTable.values()) {
             allSubQueues.addAll(queueList);
         }
-        senderTable.forEach(new BiConsumer<ConsumeQueue, QueueSender>() {
-            @Override
-            public void accept(ConsumeQueue queue, QueueSender sender) {
-                if (!allSubQueues.contains(queue)) {
-                    //这个queue，已经没有consumer订阅了
-                    sender.shutdown();
-                    senderTable.remove(queue);
-                }
+
+        for (ConsumeQueue queue : senderQueues) {
+            if (!allSubQueues.contains(queue)) {
+                //这个queue，已经没有consumer订阅了
+                senderTable.get(queue).shutdown();
+                senderTable.remove(queue);
             }
-        });
-        //根据allSubQueues，添加senders的新成员
-        Set<ConsumeQueue> senderQueues = senderTable.keySet();
+        }
+
+        //3.根据allSubQueues，添加senders的新成员
         for (ConsumeQueue queue : allSubQueues) {
             if (!senderQueues.contains(queue)) {
                 //原来没有该queue，创建该sender
                 ArrayList<Consumer> consumerList = new ArrayList<>();
-                consumerList.add(consumer);
+                for (Consumer consumer : subTable.keySet()) {
+                    if (subTable.get(consumer).contains(queue)) {
+                        //扫描每个consumer的订阅queue，若需要这个queue
+                        consumerList.add(consumer);
+                    }
+                }
                 QueueSender newSender = new QueueSender(queue, consumerList, false);
                 senderTable.put(queue, newSender);
                 //启动sender
@@ -81,10 +80,27 @@ public class ConsumerSolver {
             } else {
                 //原来有该queue。若没有该consumer则添加consumer
                 List<Consumer> consumerList = senderTable.get(queue).getConsumerList();
-                if (!consumerList.contains(consumer)) {
-                    consumerList.add(consumer);
+                for (Consumer consumer : subTable.keySet()) {
+                    if (subTable.get(consumer).contains(queue)) {
+                        //扫描每个consumer的订阅queue，若需要这个queue
+                        if (!consumerList.contains(consumer)) {
+                            consumerList.add(consumer);
+                        }
+                    }
                 }
             }
+        }
+    }
+
+    /**
+     * 移除senders中 consumer 不再需要的占位
+     */
+    private void removeUselessConsumerFromSender() {
+        Collection<QueueSender> senders = senderTable.values();
+        for (QueueSender sender : senders) {
+            List<Consumer> senderConsumerList = sender.getConsumerList();
+            //如果某个sender包括该consumer，判断是否保留
+            senderConsumerList.removeIf(consumer -> (!subTable.containsKey(consumer)||subTable.get(consumer).contains(sender.getQueue())));
         }
     }
 
@@ -97,7 +113,7 @@ public class ConsumerSolver {
     private void flushSubTable(Consumer consumer, ConcurrentMap<String, SubscriptionData> data) {
         List<ConsumeQueue> subQueues = new ArrayList<>();
         data.forEach((s, subscriptionData) -> {
-            //对于每一个topic
+            //对于来自consumer的每一个topic
             Set<String> tagsSet = subscriptionData.getTagsSet();
             for (String tag : tagsSet) {
                 //对于每一个tag
@@ -109,6 +125,29 @@ public class ConsumerSolver {
             }
         });
         subTable.put(consumer, subQueues);
+        consumerHP.put(consumer,0);
     }
 
+    public void countDown(){
+        consumerHP.replaceAll(new BiFunction<Consumer, Integer, Integer>() {
+            @Override
+            public Integer apply(Consumer consumer, Integer integer) {
+                return integer-1;
+            }
+        });
+    }
+
+    /**
+     * Broker 每隔 10s 扫描所有存活的连接，若某个连接2分钟内没有发送心跳数据，则关闭连接
+     */
+    public void checkHp() {
+        Set<Consumer> consumers = consumerHP.keySet();
+        for (Consumer consumer : consumers) {
+            if (consumerHP.get(consumer)<-12) {
+                consumerHP.remove(consumer);
+                subTable.remove(consumer);
+                flushSenderTable();
+            }
+        }
+    }
 }

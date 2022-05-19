@@ -33,7 +33,7 @@ public class QueueSender implements Runnable {
     @Override
     public void run() {
         //只要有客户，就一直（阻塞）发送
-        while (!consumerList.isEmpty()){
+        while (running && !consumerList.isEmpty()) {
             for (Consumer consumer : consumerList) {
                 try {
                     consumer.receiveMessage(queue.removeMessage());
@@ -45,11 +45,11 @@ public class QueueSender implements Runnable {
     }
 
     public void start() {
+        running = true;
         threadPool.submit(this);
-        running=true;
     }
 
     public void shutdown() {
-        running=false;
+        running = false;
     }
 }

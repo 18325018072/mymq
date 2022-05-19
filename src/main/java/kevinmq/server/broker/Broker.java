@@ -6,6 +6,8 @@ import kevinmq.client.consumer.data.SubscriptionData;
 import kevinmq.client.producer.Producer;
 import kevinmq.client.producer.SendCallback;
 import kevinmq.client.producer.res.SendResult;
+import kevinmq.dao.Record;
+import kevinmq.dao.Store;
 import kevinmq.message.Message;
 import kevinmq.server.broker.data.BrokerData;
 import kevinmq.server.broker.data.ConsumeQueue;
@@ -17,6 +19,8 @@ import lombok.Data;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.concurrent.ConcurrentMap;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 /**
  * 服务器<br/>
@@ -26,19 +30,20 @@ import java.util.concurrent.ConcurrentMap;
 @Data
 public class Broker {
     private BrokerData brokerData;
-    private String brokerName= "Default";
-    private ConsumerSolver consumerSolver=new ConsumerSolver();
-    private ProducerSolver producerSolver=new ProducerSolver();
+    private String brokerName = "Default";
+    private ConsumerSolver consumerSolver = new ConsumerSolver();
+    private ProducerSolver producerSolver = new ProducerSolver();
+    private boolean running = false;
 
     public Broker() {
-        brokerData=new BrokerData(brokerName);
-        NameServer.getNameServer().updateWithBroker(this);
+        brokerData = new BrokerData(brokerName);
+        NameServer.getNameServer().receiveHeartbeatFromBroker(this);
     }
 
     public Broker(String brokerName) {
         this.brokerName = brokerName;
-        brokerData=new BrokerData(brokerName);
-        NameServer.getNameServer().updateWithBroker(this);
+        brokerData = new BrokerData(brokerName);
+        NameServer.getNameServer().receiveHeartbeatFromBroker(this);
     }
 
     /**
@@ -101,7 +106,7 @@ public class Broker {
             //发送心跳给NameServer，以同步路由信息
             sendHeartbeatToNameServer();
             return true;
-        }else {
+        } else {
             return false;
         }
     }
@@ -119,24 +124,58 @@ public class Broker {
      * 每隔一定时间（默认30s）发送心跳到 NameServer
      */
     public void sendHeartbeatToNameServer() {
-        NameServer.getNameServer().updateWithBroker(this);
+        NameServer.getNameServer().receiveHeartbeatFromBroker(this);
     }
 
     /**
-     * 关闭 broker:在 NameServer 中注销
+     * 关闭 broker:<p>停止心跳，并在 NameServer 中注销</p>
      */
     public void shutdown() {
+        running = false;
         NameServer.getNameServer().removeBroker(this);
+        System.out.println("broker shutdown");
+        Store.getStore().save(new Record(brokerName, "shutdown", null));
     }
 
     /**
      * 接受客户端的心跳
      */
-    public void receiveHeartBeat(Client client, Object data) {
+    public void receiveHeartBeatFromClient(Client client, Object data) {
         if (client instanceof Consumer) {
             this.consumerSolver.receiveHeartBeat((Consumer) client, (ConcurrentMap<String, SubscriptionData>) data);
-        }else if(client instanceof Producer){
+        } else if (client instanceof Producer) {
             //处理来自Producer的心跳……
         }
     }
+
+
+    /**
+     * 开始心跳
+     */
+    public void start() {
+        running = true;
+        ScheduledThreadPoolExecutor threadPool = new ScheduledThreadPoolExecutor(3);
+        //向NameServer发送心跳
+        threadPool.scheduleAtFixedRate(new Runnable() {
+            @Override
+            public void run() {
+                while (running) {
+                    sendHeartbeatToNameServer();
+                }
+            }
+        }, 0, 30, TimeUnit.SECONDS);
+        //Broker 每隔 10s 扫描所有存活的连接，若某个连接2分钟内没有发送心跳数据，则关闭连接；
+        // 并向该 Consumer Group 的所有 Consumer 发出通知，Group 内的Consumer重新分配队列，然后继续消费。
+        threadPool.scheduleAtFixedRate(new Runnable() {
+            @Override
+            public void run() {
+                consumerSolver.countDown();
+                consumerSolver.checkHp();
+            }
+        }, 0, 10, TimeUnit.SECONDS);
+
+        System.out.println("Broker Running");
+        Store.getStore().save(new Record(brokerName, "start", null));
+    }
+
 }

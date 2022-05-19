@@ -2,6 +2,7 @@ package kevinmq.server.nameserver;
 
 import kevinmq.server.broker.Broker;
 import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
 
 import java.util.Map;
 import java.util.Set;
@@ -11,7 +12,7 @@ import java.util.Set;
  *
  * @author Kevin2
  */
-@AllArgsConstructor
+@AllArgsConstructor @EqualsAndHashCode
 public class BrokerInfo {
     public Broker broker;
     /**
