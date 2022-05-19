@@ -7,6 +7,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 /**
  * 任务类。负责一个 queue 的 consumer 管理和消息发送
@@ -19,17 +23,17 @@ import java.util.List;
 public class QueueSender implements Runnable {
     private ConsumeQueue queue;
     private List<Consumer> consumerList;
+    private boolean running;
 
-    /**
-     * 为对应 queue 添加一个consumer
-     */
-    private void addConsumer(Consumer consumer) {
-        consumerList.add(consumer);
-    }
+    private static ExecutorService threadPool = new ThreadPoolExecutor(10, 50,
+            0L, TimeUnit.MILLISECONDS,
+            new LinkedBlockingQueue<>(1024),
+            new ThreadPoolExecutor.AbortPolicy());
 
     @Override
     public void run() {
-        while (true){
+        //只要有客户，就一直（阻塞）发送
+        while (!consumerList.isEmpty()){
             for (Consumer consumer : consumerList) {
                 try {
                     consumer.receiveMessage(queue.removeMessage());
@@ -40,7 +44,12 @@ public class QueueSender implements Runnable {
         }
     }
 
-    public void shutdown() {
+    public void start() {
+        threadPool.submit(this);
+        running=true;
+    }
 
+    public void shutdown() {
+        running=false;
     }
 }

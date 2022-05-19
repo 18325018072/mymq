@@ -18,19 +18,84 @@ public class ConsumerSolver {
      * Consumer 订阅注册表
      * {@code 对应关系：Consumer-list<topic,tag>-list<queue>}
      */
-    private Map<Consumer, List<ConsumeQueue>> subTable;
+    private Map<Consumer, List<ConsumeQueue>> subTable=new HashMap<>();
     /**
      * 所有发送者，与 queue 一一对应
      */
-    private Map<ConsumeQueue, QueueSender> senders;
+    private Map<ConsumeQueue, QueueSender> senderTable=new HashMap<>();
     private BrokerData brokerData;
 
     /**
-     * 接受来自Consumer的心跳
+     * 接受来自Consumer的心跳，更新订阅注册表和senders信息
      */
     public void receiveHeartBeat(Consumer consumer, ConcurrentMap<String, SubscriptionData> data) {
-        List<ConsumeQueue> subQueues=new ArrayList<>();
         //解析data，更新注册表
+        flushSubTable(consumer, data);
+        //调整senders
+        flushSenderTable(consumer);
+    }
+
+    /**
+     * 更新senderTable
+     *
+     * @param consumer
+     */
+    private void flushSenderTable(Consumer consumer) {
+        //移除senders的退休成员：consumer不再需要的占位
+        Collection<QueueSender> senders = senderTable.values();
+        for (QueueSender sender : senders) {
+            List<Consumer> senderConsumerList = sender.getConsumerList();
+            //如果某个sender包括该consumer，判断是否保留
+            if (senderConsumerList.contains(consumer) && !subTable.get(consumer).contains(sender.getQueue())) {
+                //不该继续存在
+                senderConsumerList.remove(consumer);
+            }
+        }
+        //根据allSubQueues除去senders中无consumer的queue
+        Collection<List<ConsumeQueue>> listCollection = subTable.values();
+        List<ConsumeQueue> allSubQueues = new ArrayList<>();
+        for (List<ConsumeQueue> queueList : listCollection) {
+            allSubQueues.addAll(queueList);
+        }
+        senderTable.forEach(new BiConsumer<ConsumeQueue, QueueSender>() {
+            @Override
+            public void accept(ConsumeQueue queue, QueueSender sender) {
+                if (!allSubQueues.contains(queue)) {
+                    //这个queue，已经没有consumer订阅了
+                    sender.shutdown();
+                    senderTable.remove(queue);
+                }
+            }
+        });
+        //根据allSubQueues，添加senders的新成员
+        Set<ConsumeQueue> senderQueues = senderTable.keySet();
+        for (ConsumeQueue queue : allSubQueues) {
+            if (!senderQueues.contains(queue)) {
+                //原来没有该queue，创建该sender
+                ArrayList<Consumer> consumerList = new ArrayList<>();
+                consumerList.add(consumer);
+                QueueSender newSender = new QueueSender(queue, consumerList, false);
+                senderTable.put(queue, newSender);
+                //启动sender
+                newSender.start();
+            } else {
+                //原来有该queue。若没有该consumer则添加consumer
+                List<Consumer> consumerList = senderTable.get(queue).getConsumerList();
+                if (!consumerList.contains(consumer)) {
+                    consumerList.add(consumer);
+                }
+            }
+        }
+    }
+
+    /**
+     * 更新订阅注册表
+     *
+     * @param consumer 消费者
+     * @param data     订阅数据{@code Map<topic,subData>}
+     */
+    private void flushSubTable(Consumer consumer, ConcurrentMap<String, SubscriptionData> data) {
+        List<ConsumeQueue> subQueues = new ArrayList<>();
         data.forEach((s, subscriptionData) -> {
             //对于每一个topic
             Set<String> tagsSet = subscriptionData.getTagsSet();
@@ -43,41 +108,7 @@ public class ConsumerSolver {
                 subQueues.addAll(tagQueues);
             }
         });
-        subTable.put(consumer,subQueues);
-        //调整senders
-        Collection<List<ConsumeQueue>> listCollection = subTable.values();
-        List<ConsumeQueue> allSubQueues=new ArrayList<>();
-        for (List<ConsumeQueue> queueList : listCollection) {
-            allSubQueues.addAll(queueList);
-        }
-        //根据allSubQueues去除senders中无效的queue
-        senders.forEach(new BiConsumer<ConsumeQueue, QueueSender>() {
-            @Override
-            public void accept(ConsumeQueue queue, QueueSender sender) {
-                if (!allSubQueues.contains(queue)) {
-                    sender.shutdown();
-                    senders.remove(queue);
-                }
-            }
-        });
-        //根据allSubQueues，完善senders
-        Set<ConsumeQueue> senderQueues = senders.keySet();
-        for (ConsumeQueue queue : allSubQueues) {
-            if (!senderQueues.contains(queue)) {
-                //原来没有该queue
-                ArrayList<Consumer> consumerList = new ArrayList<>();
-                consumerList.add(consumer);
-                senders.put(queue,new QueueSender(queue,consumerList));
-            }else {
-                //原来有该queue
-                
-            }
-        }
+        subTable.put(consumer, subQueues);
     }
-
-    //发送消息：
-    //运营线程池，线程一对一监控queue，并发送存储的订阅消息：
-    //线程1：监视queue1，有则发
-    //线程2：监视queue2，有则发
 
 }
