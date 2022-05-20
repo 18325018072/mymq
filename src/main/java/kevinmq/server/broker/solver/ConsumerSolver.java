@@ -36,7 +36,8 @@ public class ConsumerSolver {
         //调整senders
         flushSenderTable();
         //心跳记录❥(^_-)
-        consumerHP.compute(consumer, (consumer1, integer) -> integer + 1);
+        consumerHP.putIfAbsent(consumer,0);
+        consumerHP.replace(consumer,0);
     }
 
     /**
@@ -147,6 +148,14 @@ public class ConsumerSolver {
                 consumerHP.remove(consumer);
                 subTable.remove(consumer);
                 flushSenderTable();
+            }
+        }
+    }
+
+    public void shutdownConsumers(){
+        for (Consumer consumer : subTable.keySet()) {
+            if (consumer!=null) {
+                consumer.shutdown();
             }
         }
     }

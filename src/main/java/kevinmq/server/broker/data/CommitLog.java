@@ -23,7 +23,7 @@ public class CommitLog {
     /**
      * 消息主体以及元数据
      */
-    private ArrayList<MessageQueue> data;
+    private ArrayList<MessageQueue> data=new ArrayList<>();
 
     /**
      * 添加一条信息，并写入 msgQueue

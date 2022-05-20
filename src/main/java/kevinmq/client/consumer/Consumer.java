@@ -2,6 +2,7 @@ package kevinmq.client.consumer;
 
 import kevinmq.client.Client;
 import kevinmq.client.consumer.data.ConsumerDataManager;
+import kevinmq.client.consumer.process.MessageListener;
 import kevinmq.client.consumer.process.MessageProcessor;
 import kevinmq.message.Message;
 import kevinmq.server.nameserver.BrokerInfo;
@@ -36,6 +37,7 @@ public class Consumer extends Client {
      */
     private MessageProcessor processor;
     private boolean running = false;
+    private ScheduledThreadPoolExecutor heartPool;
 
     public Consumer(String name) {
         data.setConsumerName(name);
@@ -54,6 +56,10 @@ public class Consumer extends Client {
         } catch (Exception e) {
             throw new RuntimeException("subscription exception");
         }
+    }
+
+    public void registerMessageListener(MessageListener messageListener) {
+        processor.registerMessageListener(messageListener);
     }
 
     /**
@@ -85,8 +91,8 @@ public class Consumer extends Client {
     public void start(){
         running=true;
         //向Brokers发送心跳
-        ScheduledThreadPoolExecutor threadPool = new ScheduledThreadPoolExecutor(3);
-        threadPool.scheduleAtFixedRate(new Runnable() {
+        heartPool = new ScheduledThreadPoolExecutor(3);
+        heartPool.scheduleAtFixedRate(new Runnable() {
             @Override
             public void run() {
                 while (running){
@@ -96,7 +102,7 @@ public class Consumer extends Client {
         },0,30, TimeUnit.SECONDS);
 
         //向NameServer发送心跳
-        threadPool.scheduleAtFixedRate(new Runnable() {
+        heartPool.scheduleAtFixedRate(new Runnable() {
             @Override
             public void run() {
                 while (running){
@@ -112,5 +118,7 @@ public class Consumer extends Client {
      */
     public void shutdown() {
         running=false;
+        heartPool.shutdownNow();
+        processor.getThreadPool().shutdownNow();
     }
 }

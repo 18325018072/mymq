@@ -1,12 +1,16 @@
 package kevinmq.dao;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.ObjectOutputStream;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.apache.commons.io.IOUtils;
+
+import java.io.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * Dao层的日志类
@@ -25,7 +29,7 @@ public class Store {
     /**
      * 缓存容器
      */
-    private ArrayList<Record> messageCache =new ArrayList<>();
+    private List<Record> messageCache = Collections.synchronizedList(new ArrayList<>());
 
     private static volatile Store storeInstance;
 
@@ -35,7 +39,7 @@ public class Store {
      */
     public static Store getStore() {
         if (storeInstance == null) {
-            synchronized (storeInstance) {
+            synchronized (Store.class) {
                 if (storeInstance == null) {
                     storeInstance = new Store();
                 }
@@ -51,6 +55,7 @@ public class Store {
         messageCache.add(record);
         if (messageCache.size()>=MESSAGE_CACHE_MAXSIZE){
             store(messageCache);
+            messageCache.clear();
         }
     }
 
@@ -59,20 +64,27 @@ public class Store {
      */
     public void flush(){
         store(messageCache);
+        messageCache.clear();
     }
 
     /**
      * 持久化保存文件
      */
-    private void store(Object obj){
+    private <T> void store(List<T> datalist){
+        List<T> list=new ArrayList<>(datalist);
         //准备文件
         Date date = new Date();
-        DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
-        file = new File("log/KevinMqLog_" + dateFormat.format(date) + ".txt");
+        DateFormat dateFormat = new SimpleDateFormat("yyyy_MM dd");
+        File directory = new File("log");
+        if (!directory.exists()) {
+            System.out.println(directory.mkdirs());
+        }
+        file = new File("./log/KevinMqLog_" + dateFormat.format(date) + ".txt");
         //写入文件
-        try (FileOutputStream os = new FileOutputStream(file, true);
-             ObjectOutputStream oos = new ObjectOutputStream(os)) {
-            oos.writeObject(obj);
+        try (Writer writer = new FileWriter(file, true)) {
+            for (T t : list) {
+                IOUtils.write(date+t.toString()+"\n",writer);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }

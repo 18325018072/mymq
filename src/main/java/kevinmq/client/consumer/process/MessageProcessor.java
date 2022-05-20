@@ -5,8 +5,10 @@ import kevinmq.dao.Store;
 import kevinmq.message.Message;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
@@ -21,7 +23,16 @@ public class MessageProcessor {
     /**
      * 处理消息的线程池
      */
-    private ThreadPoolExecutor threadPool = new ThreadPoolExecutor(20, 40, 30, TimeUnit.SECONDS, new ArrayBlockingQueue<>(100));
+    private ThreadPoolExecutor threadPool = new ThreadPoolExecutor(20, 40,
+            30, TimeUnit.SECONDS, new ArrayBlockingQueue<>(100),
+            new ThreadFactory() {
+                int i = 0;
+
+                @Override
+                public Thread newThread(@NotNull Runnable r) {
+                    return new Thread(r, "consumer_processor" + i++);
+                }
+            });
     /**
      * 消息监听处理
      */
@@ -29,9 +40,10 @@ public class MessageProcessor {
     private String consumerName;
     private final int PROCESSOR_BUSY_LIMIT = 10;
 
-    public MessageProcessor(String consumerName){
+    public MessageProcessor(String consumerName) {
         this.consumerName = consumerName;
     }
+
     /**
      * 注册消息监听
      */
@@ -49,7 +61,7 @@ public class MessageProcessor {
             //消费结果处理
             if (res == ConsumeStatus.Consume_Fail) {
                 Store.getStore().save(new Record(consumerName, "Fail to consume", message));
-            }else if (res==ConsumeStatus.Consume_Success){
+            } else if (res == ConsumeStatus.Consume_Success) {
                 Store.getStore().save(new Record(consumerName, "consumed", message));
             }
             if (threadPool.getQueue().size() > PROCESSOR_BUSY_LIMIT) {

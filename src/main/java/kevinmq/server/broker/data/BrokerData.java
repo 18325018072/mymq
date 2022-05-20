@@ -75,7 +75,10 @@ import java.util.Random;
      */
     public boolean addTopicTag(String topic, String tag, int queueNum) {
         //若有，返回原topicMap。若没有topic，创建topicMap
-        HashMap<String, ArrayList<ConsumeQueue>> topicMap = topicTable.putIfAbsent(topic, new HashMap<>(6));
+        HashMap<String, ArrayList<ConsumeQueue>> topicMap = topicTable.get(topic);
+        if (topicMap==null) {
+            topicMap=new HashMap<>(6);
+        }
 
         if (topicMap.containsKey(tag)) {
             //已存在tag，无需重复添加

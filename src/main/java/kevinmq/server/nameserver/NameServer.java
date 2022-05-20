@@ -2,6 +2,8 @@ package kevinmq.server.nameserver;
 
 import kevinmq.client.consumer.Consumer;
 import kevinmq.client.consumer.data.SubscriptionData;
+import kevinmq.dao.Record;
+import kevinmq.dao.Store;
 import kevinmq.server.broker.Broker;
 import kevinmq.server.broker.data.ConsumeQueue;
 import lombok.NonNull;
@@ -9,6 +11,11 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentMap;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
+import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.TimeUnit;
+import java.util.function.BiFunction;
+import java.util.function.Predicate;
 
 /**
  * 命名服务器
@@ -22,18 +29,21 @@ public class NameServer {
      * {@code HashMap<Broker,HashMap<topic,HashSet<tag>>>}
      */
     private Set<BrokerInfo> brokerInfoSet =new HashSet<>(DEFAULT_BROKER_NUMS);
+    private Map<BrokerInfo,Integer> brokerHp=new HashMap<>();
 
     /**
      * 单例模式的 NameServer对象
      */
-    private static volatile NameServer nameserver;
+    private static volatile NameServer nameserver=null;
+    private boolean running;
+    private ScheduledThreadPoolExecutor threadPool;
 
     /**
      * 饿汉单例模式创建 NameServer对象
      */
     public static NameServer getNameServer() {
         if (nameserver == null) {
-            synchronized (nameserver) {
+            synchronized (NameServer.class) {
                 if (nameserver == null) {
                     nameserver = new NameServer();
                 }
@@ -48,8 +58,8 @@ public class NameServer {
      * @param broker 要注册或更新信息的 Broker
      */
     public void receiveHeartbeatFromBroker(@NotNull Broker broker) {
+        //解析路由信息
         Map<String,Set<String>> newInfo = new HashMap<>(6);
-
         HashMap<String, HashMap<String, ArrayList<ConsumeQueue>>> topicTable = broker.getBrokerData().getTopicTable();
         Set<String> newTopicSet = topicTable.keySet();
         for (String newTopic : newTopicSet) {
@@ -57,7 +67,19 @@ public class NameServer {
             Set<String> tagSet = topicTable.get(newTopic).keySet();
             newInfo.put(newTopic,tagSet);
         }
-        brokerInfoSet.add(new BrokerInfo(broker,newInfo));
+        //更新路由信息
+        for (BrokerInfo brokerInfo : brokerInfoSet) {
+            if (brokerInfo.broker==broker) {
+                brokerInfo.topicInfo=newInfo;
+                //心跳记录❥(^_-)
+                brokerHp.replace(brokerInfo,0);
+                return;
+            }
+        }
+        //如果没有brokerInfo，则新建
+        BrokerInfo newBrokerInfo = new BrokerInfo(broker, newInfo);
+        brokerInfoSet.add(newBrokerInfo);
+        brokerHp.putIfAbsent(newBrokerInfo,0);
     }
 
     /**
@@ -109,5 +131,67 @@ public class NameServer {
             }
         }
         return res;
+    }
+
+    /**
+     * 开启 NameServer，开始检测broker心跳
+     */
+    public void start(){
+        running=true;
+        threadPool = new ScheduledThreadPoolExecutor(3,new ThreadFactory() {
+            int i;
+
+            @Override
+            public Thread newThread(@NotNull Runnable r) {
+                return new Thread(r, "NameServer-Check" + i++);
+            }
+        });
+
+        //Name Server 每隔 10s 扫描所有存活 broker 的连接
+        // 如果 Name Server 超过2分钟没有收到心跳，则 Name Server 从路由注册表中将其移除该 Broker 的连接。
+        threadPool.scheduleAtFixedRate(new Runnable() {
+            @Override
+            public void run() {
+                //生命减一
+                brokerHp.replaceAll(new BiFunction<BrokerInfo, Integer, Integer>() {
+                    @Override
+                    public Integer apply(BrokerInfo brokerInfo, Integer integer) {
+                        return integer - 1;
+                    }
+                });
+                //检查
+                Set<BrokerInfo> brokerInfoSet = brokerHp.keySet();
+                for (BrokerInfo brokerInfo : brokerInfoSet) {
+                    if (brokerHp.get(brokerInfo)<-12) {
+                        brokerHp.remove(brokerInfo);
+                        brokerInfoSet.remove(brokerInfo);
+                    }
+                }
+            }
+        }, 0, 10, TimeUnit.SECONDS);
+        //Todo
+        threadPool.scheduleAtFixedRate(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("NameServer Running");
+            }
+        }, 0, 2, TimeUnit.SECONDS);
+        Store.getStore().save(new Record("NameServer","启动",null));
+    }
+
+    /**
+     * 关闭 NameServer
+     */
+    public void shutdown() {
+        running=false;
+        threadPool.shutdownNow();
+        for (BrokerInfo brokerInfo : brokerInfoSet) {
+            if (brokerInfo.broker!=null) {
+                brokerInfo.broker.shutdownAllConsumers();
+                brokerInfo.broker.shutdown();
+            }
+        }
+        Store.getStore().save(new Record("NameServer","shutdown","---------------------------"));
+        Store.getStore().flush();
     }
 }

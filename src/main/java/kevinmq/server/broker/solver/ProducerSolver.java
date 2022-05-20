@@ -8,6 +8,7 @@ import kevinmq.dao.Store;
 import kevinmq.message.Message;
 import kevinmq.server.broker.data.BrokerData;
 import kevinmq.server.broker.data.ConsumeQueue;
+import lombok.AllArgsConstructor;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.LinkedBlockingQueue;
@@ -21,6 +22,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class ProducerSolver {
     private BrokerData brokerData;
+
     /**
      * 用于处理异步消息的线程池：长度无限，存活时间3分钟
      */
@@ -30,9 +32,13 @@ public class ProducerSolver {
         int index = 0;
         @Override
         public Thread newThread(@NotNull Runnable r) {
-            return new Thread(r, "thread No." + index++);
+            return new Thread(r, "broker_producerSolver" + index++);
         }
     });
+
+    public ProducerSolver(BrokerData brokerData) {
+        this.brokerData = brokerData;
+    }
 
     /**
      * 接收同步消息

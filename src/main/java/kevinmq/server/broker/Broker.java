@@ -15,11 +15,13 @@ import kevinmq.server.broker.solver.ConsumerSolver;
 import kevinmq.server.broker.solver.ProducerSolver;
 import kevinmq.server.nameserver.NameServer;
 import lombok.Data;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
+import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -29,20 +31,18 @@ import java.util.concurrent.TimeUnit;
  */
 @Data
 public class Broker {
-    private BrokerData brokerData;
-    private String brokerName = "Default";
+    private BrokerData brokerData= new BrokerData("Default");
     private ConsumerSolver consumerSolver = new ConsumerSolver();
-    private ProducerSolver producerSolver = new ProducerSolver();
+    private ProducerSolver producerSolver = new ProducerSolver(brokerData);
     private boolean running = false;
+    private ScheduledThreadPoolExecutor threadPool;
 
     public Broker() {
-        brokerData = new BrokerData(brokerName);
         NameServer.getNameServer().receiveHeartbeatFromBroker(this);
     }
 
     public Broker(String brokerName) {
-        this.brokerName = brokerName;
-        brokerData = new BrokerData(brokerName);
+        brokerData.setBrokerName(brokerName);
         NameServer.getNameServer().receiveHeartbeatFromBroker(this);
     }
 
@@ -132,9 +132,15 @@ public class Broker {
      */
     public void shutdown() {
         running = false;
+        threadPool.shutdownNow();
         NameServer.getNameServer().removeBroker(this);
-        System.out.println("broker shutdown");
-        Store.getStore().save(new Record(brokerName, "shutdown", null));
+
+        //日志记录
+        Store.getStore().save(new Record(brokerData.getBrokerName(), "shutdown", null));
+    }
+
+    public void shutdownAllConsumers(){
+        consumerSolver.shutdownConsumers();
     }
 
     /**
@@ -154,7 +160,14 @@ public class Broker {
      */
     public void start() {
         running = true;
-        ScheduledThreadPoolExecutor threadPool = new ScheduledThreadPoolExecutor(3);
+        threadPool = new ScheduledThreadPoolExecutor(3, new ThreadFactory() {
+            int i;
+
+            @Override
+            public Thread newThread(@NotNull Runnable r) {
+                return new Thread(r, "broker-Heart" + i++);
+            }
+        });
         //向NameServer发送心跳
         threadPool.scheduleAtFixedRate(new Runnable() {
             @Override
@@ -173,9 +186,8 @@ public class Broker {
                 consumerSolver.checkHp();
             }
         }, 0, 10, TimeUnit.SECONDS);
-
-        System.out.println("Broker Running");
-        Store.getStore().save(new Record(brokerName, "start", null));
+        //日志记录
+        Store.getStore().save(new Record(brokerData.getBrokerName(), "启动", null));
     }
 
 }

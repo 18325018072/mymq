@@ -5,12 +5,10 @@ import kevinmq.server.broker.data.ConsumeQueue;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
 /**
  * 任务类。负责一个 queue 的 consumer 管理和消息发送
@@ -28,7 +26,14 @@ public class QueueSender implements Runnable {
     private static ExecutorService threadPool = new ThreadPoolExecutor(10, 50,
             0L, TimeUnit.MILLISECONDS,
             new LinkedBlockingQueue<>(1024),
-            new ThreadPoolExecutor.AbortPolicy());
+            new ThreadFactory() {
+                int i = 0;
+
+                @Override
+                public Thread newThread(@NotNull Runnable r) {
+                    return new Thread(r, "broker_Sender" + i++);
+                }
+            });
 
     @Override
     public void run() {
