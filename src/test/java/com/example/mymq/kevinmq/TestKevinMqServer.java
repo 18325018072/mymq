@@ -24,7 +24,7 @@ import java.util.concurrent.TimeUnit;
 public class TestKevinMqServer {
     static int producerNum = 0;
     static int consumerNum = 0;
-    private static Thread thread;
+    private static ThreadPoolExecutor pool;
 
     public static void main(String[] args) {
         //开启NameServer
@@ -32,11 +32,11 @@ public class TestKevinMqServer {
         //创建Broker
         Broker broker1 = new Broker("Broker初号机");
         //开启Broker仓库
-        broker1.addTopicTag("衣服","上衣",6);
+        broker1.addTopicTag("衣服", "上衣", 6);
         //启动Broker
         broker1.start();
         System.out.println("启动成功");
-        while (true){
+        while (true) {
             Scanner scanner = new Scanner(System.in);
             String s = scanner.nextLine();
             if ("p".equals(s)) {
@@ -51,9 +51,15 @@ public class TestKevinMqServer {
             }
             if ("q".equals(s)) {
                 //关闭NameServer
-                NameServer.getNameServer().shutdown();
+                if (pool != null) {
+                    pool.shutdownNow();
+                }
+                try {
+                    NameServer.getNameServer().shutdown();
+                } catch (Exception e) {
+                    System.out.println("罪魁祸首");
+                }
                 System.out.println("退出");
-                System.out.println(thread.isAlive());
                 System.gc();
                 return;
             }
@@ -61,8 +67,7 @@ public class TestKevinMqServer {
     }
 
 
-
-    public static void ConsumerGo(){
+    public static void ConsumerGo() {
         Runnable consumerRunnable = new Runnable() {
             @Override
             public void run() {
@@ -75,7 +80,7 @@ public class TestKevinMqServer {
                 consumer1.registerMessageListener(new MessageListener() {
                     @Override
                     public ConsumeStatus consumeMessage(Message message) {
-                        System.out.println("处理："+new String(message.getBody()));
+                        System.out.println("处理：" + new String(message.getBody()));
                         return ConsumeStatus.Consume_Success;
                     }
                 });
@@ -86,7 +91,7 @@ public class TestKevinMqServer {
         new Thread(consumerRunnable).start();
     }
 
-    public static void ProducerGo(){
+    public static void ProducerGo() {
         Runnable producerRunnable = new Runnable() {
             @Override
             public void run() {
@@ -112,7 +117,7 @@ public class TestKevinMqServer {
                 producer1.sendSynchronously(new Message("２運命を進め"));
             }
         };
-        ThreadPoolExecutor pool = new ThreadPoolExecutor(10, 20,
+        pool = new ThreadPoolExecutor(10, 20,
                 5, TimeUnit.SECONDS, new ArrayBlockingQueue<>(5));
         for (int i = 0; i < 5; i++) {
             pool.execute(producerRunnable);
@@ -120,7 +125,7 @@ public class TestKevinMqServer {
     }
 
     @Test
-    public void test(){
+    public void test() {
         ScheduledThreadPoolExecutor threadPool = new ScheduledThreadPoolExecutor(3);
         Runnable runnable = new Runnable() {
             @Override

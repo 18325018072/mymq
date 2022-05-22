@@ -43,7 +43,7 @@ public class CommitLog {
      * @param physicOffset 定位mq的偏移值
      * @return 消息
      */
-    public Message removeMessage(int physicOffset) throws InterruptedException {
+    public Message removeMessage(int physicOffset) {
         MessageQueue messageQueue = data.get(physicOffset);
         try {
             Message message = messageQueue.queue.take();

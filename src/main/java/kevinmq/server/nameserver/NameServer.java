@@ -193,7 +193,7 @@ public class NameServer {
         threadPool.shutdownNow();
         for (BrokerInfo brokerInfo : brokerInfoSet) {
             if (brokerInfo.broker != null) {
-                brokerInfo.broker.shutdownAllConsumers();
+                    brokerInfo.broker.shutdownAllConsumers();
                 brokerInfo.broker.shutdown();
             }
         }

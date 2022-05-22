@@ -42,13 +42,9 @@ public class QueueSender {
             public void run() {
                 //只要有客户，就一直（阻塞）发送
                 while (running) {
-                    if (!consumerList.isEmpty()){
+                    if (!consumerList.isEmpty()) {
                         for (Consumer consumer : consumerList) {
-                            try {
                                 consumer.receiveMessage(queue.removeMessage());
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
                         }
                     }
                 }
@@ -62,13 +58,12 @@ public class QueueSender {
      */
     public void shutdown() {
         running = false;
-
     }
 
     /**
      * shutdown所有sender的线程池
      */
-    public static void shutdownAllSenders(){
+    public static void shutdownAllSenders() {
         threadPool.shutdownNow();
     }
 }

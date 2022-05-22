@@ -1,0 +1,1041 @@
+Sun May 22 23:37:44 CST 2022
+	NameServer  启动
+Sun May 22 23:37:44 CST 2022
+	Broker初号机  启动
+Sun May 22 23:37:44 CST 2022
+	Producer No.3  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.3)
+Sun May 22 23:37:44 CST 2022
+	Producer No.1  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.1)
+Sun May 22 23:37:44 CST 2022
+	Producer No.0  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.0)
+Sun May 22 23:37:44 CST 2022
+	Producer No.2  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.2)
+Sun May 22 23:37:44 CST 2022
+	Producer No.0  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.0)
+Sun May 22 23:37:44 CST 2022
+	Producer No.2  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.2)
+Sun May 22 23:37:44 CST 2022
+	Producer No.0  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.0)
+Sun May 22 23:37:44 CST 2022
+	Producer No.3  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.3)
+Sun May 22 23:37:44 CST 2022
+	Producer No.1  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.1)
+Sun May 22 23:37:44 CST 2022
+	Producer No.0  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.0)
+Sun May 22 23:37:44 CST 2022
+	Producer No.2  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.2)
+Sun May 22 23:37:44 CST 2022
+	Producer No.3  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.3)
+Sun May 22 23:37:44 CST 2022
+	Producer No.1  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.1)
+Sun May 22 23:37:44 CST 2022
+	Producer No.0  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.0)
+Sun May 22 23:37:44 CST 2022
+	Producer No.2  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.2)
+Sun May 22 23:37:44 CST 2022
+	Producer No.0  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.0)
+Sun May 22 23:37:44 CST 2022
+	Producer No.1  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.1)
+Sun May 22 23:37:44 CST 2022
+	Producer No.0  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.0)
+Sun May 22 23:37:44 CST 2022
+	Producer No.3  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.3)
+Sun May 22 23:37:44 CST 2022
+	Producer No.0  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.0)
+Sun May 22 23:37:44 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.0)
+Sun May 22 23:37:44 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.0)
+Sun May 22 23:37:44 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.2)
+Sun May 22 23:37:44 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.1)
+Sun May 22 23:37:44 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.3)
+Sun May 22 23:37:44 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.3)
+Sun May 22 23:37:44 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.0)
+Sun May 22 23:37:44 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.0)
+Sun May 22 23:37:44 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.1)
+Sun May 22 23:37:44 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.2)
+Sun May 22 23:37:44 CST 2022
+	Producer No.1  sendAsync
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:37:44 CST 2022
+	Producer No.1  Fail to send
+	Broker_NotFound
+Sun May 22 23:37:44 CST 2022
+	Producer No.1  Fail to send
+	Broker_NotFound
+Sun May 22 23:37:44 CST 2022
+	Producer No.3  sendAsync
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:37:44 CST 2022
+	Producer No.3  Fail to send
+	Broker_NotFound
+Sun May 22 23:37:44 CST 2022
+	Producer No.3  Fail to send
+	Broker_NotFound
+Sun May 22 23:37:44 CST 2022
+	Producer No.1  Send
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:37:44 CST 2022
+	Producer No.2  sendAsync
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:37:44 CST 2022
+	Producer No.2  Fail to send
+	Broker_NotFound
+Sun May 22 23:37:44 CST 2022
+	Producer No.2  Fail to send
+	Broker_NotFound
+Sun May 22 23:37:44 CST 2022
+	Producer No.3  Send
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:37:44 CST 2022
+	Producer No.0  sendAsync
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:37:44 CST 2022
+	Producer No.2  Send
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:37:44 CST 2022
+	Producer No.0  Fail to send
+	Broker_NotFound
+Sun May 22 23:37:44 CST 2022
+	Producer No.0  Fail to send
+	Broker_NotFound
+Sun May 22 23:37:44 CST 2022
+	Producer No.0  Send
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:37:44 CST 2022
+	Producer No.0  sendAsync
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:37:44 CST 2022
+	Producer No.0  Fail to send
+	Broker_NotFound
+Sun May 22 23:37:44 CST 2022
+	Producer No.0  Fail to send
+	Broker_NotFound
+Sun May 22 23:37:44 CST 2022
+	Producer No.0  Send
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:37:44 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:37:44 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:37:44 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:37:44 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:37:44 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:37:44 CST 2022
+	Broker初号机  shutdown
+Sun May 22 23:37:44 CST 2022
+	NameServer  shutdown
+	---------------------------
+Sun May 22 23:40:19 CST 2022
+	NameServer  启动
+Sun May 22 23:40:19 CST 2022
+	Broker初号机  启动
+Sun May 22 23:40:19 CST 2022
+	Producer No.0  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.0)
+Sun May 22 23:40:19 CST 2022
+	Producer No.2  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.2)
+Sun May 22 23:40:19 CST 2022
+	Producer No.1  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.1)
+Sun May 22 23:40:19 CST 2022
+	Producer No.3  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.3)
+Sun May 22 23:40:19 CST 2022
+	Producer No.0  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.0)
+Sun May 22 23:40:19 CST 2022
+	Producer No.0  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.0)
+Sun May 22 23:40:19 CST 2022
+	Producer No.1  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.1)
+Sun May 22 23:40:19 CST 2022
+	Producer No.2  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.2)
+Sun May 22 23:40:19 CST 2022
+	Producer No.0  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.0)
+Sun May 22 23:40:19 CST 2022
+	Producer No.3  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.3)
+Sun May 22 23:40:19 CST 2022
+	Producer No.0  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.0)
+Sun May 22 23:40:19 CST 2022
+	Producer No.0  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.0)
+Sun May 22 23:40:19 CST 2022
+	Producer No.2  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.2)
+Sun May 22 23:40:19 CST 2022
+	Producer No.1  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.1)
+Sun May 22 23:40:19 CST 2022
+	Producer No.0  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.0)
+Sun May 22 23:40:19 CST 2022
+	Producer No.3  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.3)
+Sun May 22 23:40:19 CST 2022
+	Producer No.3  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.3)
+Sun May 22 23:40:19 CST 2022
+	Producer No.0  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.0)
+Sun May 22 23:40:19 CST 2022
+	Producer No.1  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.1)
+Sun May 22 23:40:19 CST 2022
+	Producer No.2  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.2)
+Sun May 22 23:40:19 CST 2022
+	Producer No.0  sendAsync
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:40:19 CST 2022
+	Producer No.0  Fail to send
+	Broker_NotFound
+Sun May 22 23:40:19 CST 2022
+	Producer No.0  sendAsync
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:40:19 CST 2022
+	Producer No.0  Fail to send
+	Broker_NotFound
+Sun May 22 23:40:19 CST 2022
+	Producer No.0  Fail to send
+	Broker_NotFound
+Sun May 22 23:40:19 CST 2022
+	Producer No.0  Fail to send
+	Broker_NotFound
+Sun May 22 23:40:19 CST 2022
+	Producer No.1  sendAsync
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:40:19 CST 2022
+	Producer No.1  Fail to send
+	Broker_NotFound
+Sun May 22 23:40:19 CST 2022
+	Producer No.1  Fail to send
+	Broker_NotFound
+Sun May 22 23:40:19 CST 2022
+	Producer No.0  Send
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:40:19 CST 2022
+	Producer No.2  sendAsync
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:40:19 CST 2022
+	Producer No.2  Fail to send
+	Broker_NotFound
+Sun May 22 23:40:19 CST 2022
+	Producer No.0  Send
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:40:19 CST 2022
+	Producer No.2  Fail to send
+	Broker_NotFound
+Sun May 22 23:40:19 CST 2022
+	Producer No.3  sendAsync
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:40:19 CST 2022
+	Producer No.1  Send
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:40:19 CST 2022
+	Producer No.3  Fail to send
+	Broker_NotFound
+Sun May 22 23:40:19 CST 2022
+	Producer No.3  Fail to send
+	Broker_NotFound
+Sun May 22 23:40:19 CST 2022
+	Producer No.2  Send
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:40:19 CST 2022
+	Producer No.3  Send
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:40:19 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:40:19 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.2)
+Sun May 22 23:40:19 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.0)
+Sun May 22 23:40:19 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.2)
+Sun May 22 23:40:19 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.1)
+Sun May 22 23:40:19 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.0)
+Sun May 22 23:40:19 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.0)
+Sun May 22 23:40:19 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.3)
+Sun May 22 23:40:19 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.0)
+Sun May 22 23:40:19 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.3)
+Sun May 22 23:40:19 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:40:19 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.1)
+Sun May 22 23:40:19 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:40:19 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:40:19 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:40:19 CST 2022
+	Broker初号机  shutdown
+Sun May 22 23:40:19 CST 2022
+	NameServer  shutdown
+	---------------------------
+Sun May 22 23:41:30 CST 2022
+	NameServer  启动
+Sun May 22 23:41:30 CST 2022
+	Broker初号机  启动
+Sun May 22 23:41:30 CST 2022
+	Producer No.2  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.2)
+Sun May 22 23:41:30 CST 2022
+	Producer No.3  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.3)
+Sun May 22 23:41:30 CST 2022
+	Producer No.1  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.1)
+Sun May 22 23:41:30 CST 2022
+	Producer No.0  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.0)
+Sun May 22 23:41:30 CST 2022
+	Producer No.1  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.1)
+Sun May 22 23:41:30 CST 2022
+	Producer No.1  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.1)
+Sun May 22 23:41:30 CST 2022
+	Producer No.2  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.2)
+Sun May 22 23:41:30 CST 2022
+	Producer No.3  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.3)
+Sun May 22 23:41:30 CST 2022
+	Producer No.1  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.1)
+Sun May 22 23:41:30 CST 2022
+	Producer No.0  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.0)
+Sun May 22 23:41:30 CST 2022
+	Producer No.2  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.2)
+Sun May 22 23:41:30 CST 2022
+	Producer No.1  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.1)
+Sun May 22 23:41:30 CST 2022
+	Producer No.3  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.3)
+Sun May 22 23:41:30 CST 2022
+	Producer No.1  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.1)
+Sun May 22 23:41:30 CST 2022
+	Producer No.1  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.1)
+Sun May 22 23:41:30 CST 2022
+	Producer No.3  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.3)
+Sun May 22 23:41:30 CST 2022
+	Producer No.1  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.1)
+Sun May 22 23:41:30 CST 2022
+	Producer No.0  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.0)
+Sun May 22 23:41:30 CST 2022
+	Producer No.2  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.2)
+Sun May 22 23:41:30 CST 2022
+	Producer No.0  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.0)
+Sun May 22 23:41:30 CST 2022
+	Producer No.0  sendAsync
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:41:30 CST 2022
+	Producer No.0  Fail to send
+	Broker_NotFound
+Sun May 22 23:41:30 CST 2022
+	Producer No.1  sendAsync
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:41:30 CST 2022
+	Producer No.0  Fail to send
+	Broker_NotFound
+Sun May 22 23:41:30 CST 2022
+	Producer No.1  Fail to send
+	Broker_NotFound
+Sun May 22 23:41:30 CST 2022
+	Producer No.1  Fail to send
+	Broker_NotFound
+Sun May 22 23:41:30 CST 2022
+	Producer No.3  sendAsync
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:41:30 CST 2022
+	Producer No.3  Fail to send
+	Broker_NotFound
+Sun May 22 23:41:30 CST 2022
+	Producer No.3  Fail to send
+	Broker_NotFound
+Sun May 22 23:41:30 CST 2022
+	Producer No.0  Send
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:41:30 CST 2022
+	Producer No.1  sendAsync
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:41:30 CST 2022
+	Producer No.1  Fail to send
+	Broker_NotFound
+Sun May 22 23:41:30 CST 2022
+	Producer No.1  Send
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:41:30 CST 2022
+	Producer No.1  Fail to send
+	Broker_NotFound
+Sun May 22 23:41:30 CST 2022
+	Producer No.2  sendAsync
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:41:30 CST 2022
+	Producer No.3  Send
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:41:30 CST 2022
+	Producer No.2  Fail to send
+	Broker_NotFound
+Sun May 22 23:41:30 CST 2022
+	Producer No.2  Fail to send
+	Broker_NotFound
+Sun May 22 23:41:30 CST 2022
+	Producer No.1  Send
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:41:30 CST 2022
+	Producer No.2  Send
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:41:30 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.3)
+Sun May 22 23:41:30 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.2)
+Sun May 22 23:41:30 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.1)
+Sun May 22 23:41:30 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.0)
+Sun May 22 23:41:30 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:41:30 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.3)
+Sun May 22 23:41:30 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.1)
+Sun May 22 23:41:30 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.1)
+Sun May 22 23:41:30 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.1)
+Sun May 22 23:41:30 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:41:30 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.0)
+Sun May 22 23:41:30 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:41:30 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.2)
+Sun May 22 23:41:30 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:41:30 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:41:30 CST 2022
+	Broker初号机  shutdown
+Sun May 22 23:41:30 CST 2022
+	NameServer  shutdown
+	---------------------------
+Sun May 22 23:46:04 CST 2022
+	NameServer  启动
+Sun May 22 23:46:04 CST 2022
+	Broker初号机  启动
+Sun May 22 23:46:04 CST 2022
+	Producer初号机  Send
+	Message(flag=0, body=[-23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer初号机)
+Sun May 22 23:46:04 CST 2022
+	Producer初号机  Send
+	Message(flag=0, body=[-23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer初号机)
+Sun May 22 23:46:04 CST 2022
+	Producer初号机  Send
+	Message(flag=0, body=[-23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer初号机)
+Sun May 22 23:46:04 CST 2022
+	Producer初号机  Send
+	Message(flag=0, body=[-23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer初号机)
+Sun May 22 23:46:04 CST 2022
+	Producer初号机  sendAsync
+	Message(flag=0, body=[-23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:46:04 CST 2022
+	Producer初号机  Fail to send
+	Broker_NotFound
+Sun May 22 23:46:04 CST 2022
+	Producer初号机  Fail to send
+	Broker_NotFound
+Sun May 22 23:46:04 CST 2022
+	Producer初号机  Send
+	Message(flag=0, body=[-23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:46:04 CST 2022
+	Broker初号机  shutdown
+Sun May 22 23:46:04 CST 2022
+	NameServer  shutdown
+	---------------------------
+Sun May 22 23:46:28 CST 2022
+	NameServer  启动
+Sun May 22 23:46:28 CST 2022
+	Broker初号机  启动
+Sun May 22 23:46:28 CST 2022
+	Broker初号机  shutdown
+Sun May 22 23:46:28 CST 2022
+	NameServer  shutdown
+	---------------------------
+Sun May 22 23:46:57 CST 2022
+	NameServer  启动
+Sun May 22 23:46:57 CST 2022
+	Broker初号机  启动
+Sun May 22 23:46:57 CST 2022
+	Producer No.2  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.2)
+Sun May 22 23:46:57 CST 2022
+	Producer No.0  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.0)
+Sun May 22 23:46:57 CST 2022
+	Producer No.1  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.1)
+Sun May 22 23:46:57 CST 2022
+	Producer No.0  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.0)
+Sun May 22 23:46:57 CST 2022
+	Producer No.0  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.0)
+Sun May 22 23:46:57 CST 2022
+	Producer No.0  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.0)
+Sun May 22 23:46:57 CST 2022
+	Producer No.2  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.2)
+Sun May 22 23:46:57 CST 2022
+	Producer No.0  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.0)
+Sun May 22 23:46:57 CST 2022
+	Producer No.1  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.1)
+Sun May 22 23:46:57 CST 2022
+	Producer No.0  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.0)
+Sun May 22 23:46:57 CST 2022
+	Producer No.0  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.0)
+Sun May 22 23:46:57 CST 2022
+	Producer No.1  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.1)
+Sun May 22 23:46:57 CST 2022
+	Producer No.2  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.2)
+Sun May 22 23:46:57 CST 2022
+	Producer No.0  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.0)
+Sun May 22 23:46:57 CST 2022
+	Producer No.0  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.0)
+Sun May 22 23:46:57 CST 2022
+	Producer No.1  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.1)
+Sun May 22 23:46:57 CST 2022
+	Producer No.0  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.0)
+Sun May 22 23:46:57 CST 2022
+	Producer No.0  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.0)
+Sun May 22 23:46:57 CST 2022
+	Producer No.2  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.2)
+Sun May 22 23:46:57 CST 2022
+	Producer No.0  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.0)
+Sun May 22 23:46:57 CST 2022
+	Producer No.0  sendAsync
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:46:57 CST 2022
+	Producer No.0  Fail to send
+	Broker_NotFound
+Sun May 22 23:46:57 CST 2022
+	Producer No.0  sendAsync
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:46:57 CST 2022
+	Producer No.0  Fail to send
+	Broker_NotFound
+Sun May 22 23:46:57 CST 2022
+	Producer No.0  Fail to send
+	Broker_NotFound
+Sun May 22 23:46:57 CST 2022
+	Producer No.0  Fail to send
+	Broker_NotFound
+Sun May 22 23:46:57 CST 2022
+	Producer No.2  sendAsync
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:46:57 CST 2022
+	Producer No.2  Fail to send
+	Broker_NotFound
+Sun May 22 23:46:57 CST 2022
+	Producer No.2  Fail to send
+	Broker_NotFound
+Sun May 22 23:46:57 CST 2022
+	Producer No.0  sendAsync
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:46:57 CST 2022
+	Producer No.0  Send
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:46:57 CST 2022
+	Producer No.0  Fail to send
+	Broker_NotFound
+Sun May 22 23:46:57 CST 2022
+	Producer No.0  Send
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:46:57 CST 2022
+	Producer No.0  Fail to send
+	Broker_NotFound
+Sun May 22 23:46:57 CST 2022
+	Producer No.1  sendAsync
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:46:57 CST 2022
+	Producer No.2  Send
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:46:57 CST 2022
+	Producer No.1  Fail to send
+	Broker_NotFound
+Sun May 22 23:46:57 CST 2022
+	Producer No.1  Fail to send
+	Broker_NotFound
+Sun May 22 23:46:57 CST 2022
+	Producer No.0  Send
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:46:57 CST 2022
+	Producer No.1  Send
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:46:57 CST 2022
+	Broker初号机  shutdown
+Sun May 22 23:46:57 CST 2022
+	NameServer  shutdown
+	---------------------------
+Sun May 22 23:50:13 CST 2022
+	NameServer  启动
+Sun May 22 23:50:13 CST 2022
+	Broker初号机  启动
+Sun May 22 23:50:13 CST 2022
+	Producer No.0  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.0)
+Sun May 22 23:50:13 CST 2022
+	Producer No.1  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.1)
+Sun May 22 23:50:13 CST 2022
+	Producer No.3  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.3)
+Sun May 22 23:50:13 CST 2022
+	Producer No.2  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.2)
+Sun May 22 23:50:13 CST 2022
+	Producer No.1  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.1)
+Sun May 22 23:50:13 CST 2022
+	Producer No.0  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.0)
+Sun May 22 23:50:13 CST 2022
+	Producer No.1  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.1)
+Sun May 22 23:50:13 CST 2022
+	Producer No.1  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.1)
+Sun May 22 23:50:13 CST 2022
+	Producer No.2  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.2)
+Sun May 22 23:50:13 CST 2022
+	Producer No.3  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.3)
+Sun May 22 23:50:13 CST 2022
+	Producer No.0  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.0)
+Sun May 22 23:50:13 CST 2022
+	Producer No.2  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.2)
+Sun May 22 23:50:13 CST 2022
+	Producer No.3  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.3)
+Sun May 22 23:50:13 CST 2022
+	Producer No.1  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.1)
+Sun May 22 23:50:13 CST 2022
+	Producer No.1  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.1)
+Sun May 22 23:50:13 CST 2022
+	Producer No.2  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.2)
+Sun May 22 23:50:13 CST 2022
+	Producer No.0  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.0)
+Sun May 22 23:50:13 CST 2022
+	Producer No.1  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.1)
+Sun May 22 23:50:13 CST 2022
+	Producer No.1  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.1)
+Sun May 22 23:50:13 CST 2022
+	Producer No.3  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.3)
+Sun May 22 23:50:13 CST 2022
+	Producer No.0  sendAsync
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:50:13 CST 2022
+	Producer No.0  Fail to send
+	Broker_NotFound
+Sun May 22 23:50:13 CST 2022
+	Producer No.3  sendAsync
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:50:13 CST 2022
+	Producer No.0  Fail to send
+	Broker_NotFound
+Sun May 22 23:50:13 CST 2022
+	Producer No.3  Fail to send
+	Broker_NotFound
+Sun May 22 23:50:13 CST 2022
+	Producer No.3  Fail to send
+	Broker_NotFound
+Sun May 22 23:50:13 CST 2022
+	Producer No.2  sendAsync
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:50:13 CST 2022
+	Producer No.2  Fail to send
+	Broker_NotFound
+Sun May 22 23:50:13 CST 2022
+	Producer No.2  Fail to send
+	Broker_NotFound
+Sun May 22 23:50:13 CST 2022
+	Producer No.1  sendAsync
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:50:13 CST 2022
+	Producer No.1  Fail to send
+	Broker_NotFound
+Sun May 22 23:50:13 CST 2022
+	Producer No.0  Send
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:50:13 CST 2022
+	Producer No.1  Fail to send
+	Broker_NotFound
+Sun May 22 23:50:13 CST 2022
+	Producer No.1  sendAsync
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:50:13 CST 2022
+	Producer No.3  Send
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:50:13 CST 2022
+	Producer No.1  Fail to send
+	Broker_NotFound
+Sun May 22 23:50:13 CST 2022
+	Producer No.1  Fail to send
+	Broker_NotFound
+Sun May 22 23:50:13 CST 2022
+	Producer No.2  Send
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:50:13 CST 2022
+	Producer No.1  Send
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:50:13 CST 2022
+	Producer No.1  Send
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:50:13 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.3)
+Sun May 22 23:50:13 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.2)
+Sun May 22 23:50:13 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.1)
+Sun May 22 23:50:13 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:50:13 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.1)
+Sun May 22 23:50:13 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.1)
+Sun May 22 23:50:13 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.1)
+Sun May 22 23:50:13 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.0)
+Sun May 22 23:50:13 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:50:13 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:50:13 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.0)
+Sun May 22 23:50:13 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.2)
+Sun May 22 23:50:13 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:50:13 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:50:13 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.3)
+Sun May 22 23:50:13 CST 2022
+	Broker初号机  shutdown
+Sun May 22 23:50:13 CST 2022
+	NameServer  shutdown
+	---------------------------
+Sun May 22 23:52:59 CST 2022
+	NameServer  启动
+Sun May 22 23:52:59 CST 2022
+	Broker初号机  启动
+Sun May 22 23:52:59 CST 2022
+	Producer No.2  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.2)
+Sun May 22 23:52:59 CST 2022
+	Producer No.3  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.3)
+Sun May 22 23:52:59 CST 2022
+	Producer No.0  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.0)
+Sun May 22 23:52:59 CST 2022
+	Producer No.4  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.4)
+Sun May 22 23:52:59 CST 2022
+	Producer No.1  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.1)
+Sun May 22 23:52:59 CST 2022
+	Producer No.2  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.2)
+Sun May 22 23:52:59 CST 2022
+	Producer No.4  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.4)
+Sun May 22 23:52:59 CST 2022
+	Producer No.3  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.3)
+Sun May 22 23:52:59 CST 2022
+	Producer No.1  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.1)
+Sun May 22 23:52:59 CST 2022
+	Producer No.0  Send
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.0)
+Sun May 22 23:52:59 CST 2022
+	Producer No.2  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.2)
+Sun May 22 23:52:59 CST 2022
+	Producer No.3  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.3)
+Sun May 22 23:52:59 CST 2022
+	Producer No.4  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.4)
+Sun May 22 23:52:59 CST 2022
+	Producer No.1  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.1)
+Sun May 22 23:52:59 CST 2022
+	Producer No.0  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.0)
+Sun May 22 23:52:59 CST 2022
+	Producer No.4  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.4)
+Sun May 22 23:52:59 CST 2022
+	Producer No.3  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.3)
+Sun May 22 23:52:59 CST 2022
+	Producer No.1  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.1)
+Sun May 22 23:52:59 CST 2022
+	Producer No.0  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.0)
+Sun May 22 23:52:59 CST 2022
+	Producer No.2  Send
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.2)
+Sun May 22 23:52:59 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.3)
+Sun May 22 23:52:59 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.2)
+Sun May 22 23:52:59 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.2)
+Sun May 22 23:52:59 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.4)
+Sun May 22 23:52:59 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.1)
+Sun May 22 23:52:59 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.4)
+Sun May 22 23:52:59 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.1)
+Sun May 22 23:52:59 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-28, -72, -128, -25, -107, -86, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.0)
+Sun May 22 23:52:59 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.0)
+Sun May 22 23:52:59 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-29, -127, -85, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=Producer No.3)
+Sun May 22 23:52:59 CST 2022
+	Producer No.4  sendAsync
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:52:59 CST 2022
+	Producer No.4  Fail to send
+	Broker_NotFound
+Sun May 22 23:52:59 CST 2022
+	Producer No.4  Fail to send
+	Broker_NotFound
+Sun May 22 23:52:59 CST 2022
+	Producer No.2  sendAsync
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:52:59 CST 2022
+	Producer No.2  Fail to send
+	Broker_NotFound
+Sun May 22 23:52:59 CST 2022
+	Producer No.2  Fail to send
+	Broker_NotFound
+Sun May 22 23:52:59 CST 2022
+	Producer No.0  sendAsync
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:52:59 CST 2022
+	Producer No.0  Fail to send
+	Broker_NotFound
+Sun May 22 23:52:59 CST 2022
+	Producer No.4  Send
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:52:59 CST 2022
+	Producer No.0  Fail to send
+	Broker_NotFound
+Sun May 22 23:52:59 CST 2022
+	Producer No.2  Send
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:52:59 CST 2022
+	Producer No.1  sendAsync
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:52:59 CST 2022
+	Producer No.1  Fail to send
+	Broker_NotFound
+Sun May 22 23:52:59 CST 2022
+	Producer No.1  Fail to send
+	Broker_NotFound
+Sun May 22 23:52:59 CST 2022
+	Producer No.0  Send
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:52:59 CST 2022
+	Producer No.3  sendAsync
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:52:59 CST 2022
+	Producer No.3  Fail to send
+	Broker_NotFound
+Sun May 22 23:52:59 CST 2022
+	Producer No.1  Send
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:52:59 CST 2022
+	Producer No.3  Fail to send
+	Broker_NotFound
+Sun May 22 23:52:59 CST 2022
+	Producer No.3  Send
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:52:59 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:52:59 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:52:59 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:52:59 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:52:59 CST 2022
+	Consumer No.0  consumed
+	Message(flag=0, body=[-27, -68, -126, -26, -83, -91, -29, -127, -82, -23, -127, -117, -27, -111, -67, -29, -126, -110, -23, -128, -78, -29, -126, -127], topic=衣服, tag=上衣, keys=, producerName=null)
+Sun May 22 23:52:59 CST 2022
+	Broker初号机  shutdown
+Sun May 22 23:52:59 CST 2022
+	NameServer  shutdown
+	---------------------------

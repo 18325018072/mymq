@@ -35,5 +35,5 @@ public class ConsumeQueue {
     public void addMessage(Message msg) {
         data.addMessage(msg,physicOffset);
     }
-    public Message removeMessage() throws Exception {return data.removeMessage(physicOffset);}
+    public Message removeMessage() {return data.removeMessage(physicOffset);}
 }

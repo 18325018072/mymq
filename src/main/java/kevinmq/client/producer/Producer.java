@@ -12,7 +12,8 @@ import lombok.NoArgsConstructor;
 
 /**
  * 消息发送者
- * 没有绑定关系，每次发送前都要查询
+ * 没有绑定关系，每次发送前都要查询。
+ * Producer 基本无状态
  *
  * @author Kevin2
  */

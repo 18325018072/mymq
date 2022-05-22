@@ -31,7 +31,7 @@ import java.util.concurrent.TimeUnit;
  */
 @Data
 public class Broker {
-    private BrokerData brokerData= new BrokerData("Default");
+    private BrokerData brokerData = new BrokerData("Default");
     private ConsumerSolver consumerSolver = new ConsumerSolver();
     private ProducerSolver producerSolver = new ProducerSolver(brokerData);
     private boolean running = false;
@@ -140,7 +140,7 @@ public class Broker {
         Store.getStore().save(new Record(brokerData.getBrokerName(), "shutdown", null));
     }
 
-    public void shutdownAllConsumers(){
+    public void shutdownAllConsumers() {
         consumerSolver.shutdownConsumers();
     }
 
