@@ -133,6 +133,7 @@ public class Broker {
     public void shutdown() {
         running = false;
         threadPool.shutdownNow();
+        producerSolver.getThreadPoolForAsyncMes().shutdownNow();
         NameServer.getNameServer().removeBroker(this);
 
         //日志记录
@@ -172,7 +173,7 @@ public class Broker {
         threadPool.scheduleAtFixedRate(new Runnable() {
             @Override
             public void run() {
-                while (running) {
+                if (running) {
                     sendHeartbeatToNameServer();
                 }
             }

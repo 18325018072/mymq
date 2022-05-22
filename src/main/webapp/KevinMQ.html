@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KevinMQ</title>
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+<!--内容-->
+<div id="div1">
+    <table>
+        <tr>
+            <th>学号</th>
+            <th>姓名</th>
+            <th>性别</th>
+        </tr>
+        <tr v-for="student in students">
+            <td>{{student.stuId}}</td>
+            <td>{{student.stuName}}</td>
+            <td>{{student.sex}}</td>
+        </tr>
+    </table>
+    <hr/>
+    <button @click="getStudents" >{{buttonValue}}</button>
+    <button @click="changeData" >"changeData"</button>
+    <button @click="showIt" >showIt</button>
+</div>
+<!--Vue脚本-->
+<script>
+    var vue=new Vue({
+        el:'#div1',
+        data:{
+            students: [ { stuId:'5', stuName:'Jack',sex:'男'}],
+            buttonValue:'get data'
+        },
+        methods:{
+            getStudents() {
+                this.students=[{stuId:'10',stuName:'Mike',sex:'g'},
+                    {stuId:'10',stuName: 'Fuck',sex:'b'}];
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                    this.students=[{stuId:'9',stuName:'Mike',sex:'g'},
+                        {stuId:'10',stuName: 'Fuck',sex:'b'}];
+                    if (xhr.status==200&&xhr.readyState==4){
+                        vue.students=JSON.parse(xhr.responseText);
+                    }
+                };
+                xhr.open("GET","/lalala/StudentServlet",true);
+                xhr.send();
+            },
+
+            changeData(){
+                this.students=[{stuId:'8',stuName:'Mike',sex:'g'},
+                    {stuId:'10',stuName: 'Fuck',sex:'b'}];
+            },
+            showIt(){
+                console.log(this.students);
+                this.students='shit';
+            }
+        }
+    })
+</script>
+</body>
+</html>

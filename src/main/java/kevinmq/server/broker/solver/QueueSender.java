@@ -18,7 +18,7 @@ import java.util.concurrent.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class QueueSender implements Runnable {
+public class QueueSender {
     private ConsumeQueue queue;
     private List<Consumer> consumerList;
     private boolean running;
@@ -35,26 +35,40 @@ public class QueueSender implements Runnable {
                 }
             });
 
-    @Override
-    public void run() {
-        //只要有客户，就一直（阻塞）发送
-        while (running && !consumerList.isEmpty()) {
-            for (Consumer consumer : consumerList) {
-                try {
-                    consumer.receiveMessage(queue.removeMessage());
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-    }
-
     public void start() {
         running = true;
-        threadPool.submit(this);
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                //只要有客户，就一直（阻塞）发送
+                while (running) {
+                    if (!consumerList.isEmpty()){
+                        for (Consumer consumer : consumerList) {
+                            try {
+                                consumer.receiveMessage(queue.removeMessage());
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }
+                }
+            }
+        };
+        threadPool.submit(runnable);
     }
 
+    /**
+     * shutdown一个sender
+     */
     public void shutdown() {
         running = false;
+
+    }
+
+    /**
+     * shutdown所有sender的线程池
+     */
+    public static void shutdownAllSenders(){
+        threadPool.shutdownNow();
     }
 }

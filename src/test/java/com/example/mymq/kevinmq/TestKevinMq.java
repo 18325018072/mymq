@@ -73,10 +73,9 @@ public class TestKevinMq {
         //启动Consumer（启动心跳）
         consumer1.start();
 
-        //关闭Broker
-        broker1.shutdown();
         //关闭NameServer
         NameServer.getNameServer().shutdown();
+        System.out.println(1);
     }
 
 }

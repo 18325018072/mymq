@@ -11,7 +11,8 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * 客户端，包括 Producer 和 Consumer
+ * 客户端，可以是 Producer 和 Consumer。
+ * 包括了本地缓存的 topic 路由信息，以及查找 Broker 的方法
  * @author Kevin2
  */
 @Data public class Client {

@@ -10,10 +10,12 @@ import kevinmq.server.nameserver.NameServer;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
+import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -38,10 +40,13 @@ public class Consumer extends Client {
     private MessageProcessor processor;
     private boolean running = false;
     private ScheduledThreadPoolExecutor heartPool;
+    ThreadGroup tg=new ThreadGroup("totalThreadGroup");
+
 
     public Consumer(String name) {
         data.setConsumerName(name);
         processor = new MessageProcessor(name);
+        tg.destroy();
     }
 
     /**
@@ -83,6 +88,9 @@ public class Consumer extends Client {
      */
     private void sendHeartbeatToNameServer(){
         brokerInfo=NameServer.getNameServer().receiveHeartbeatFromConsumer(this, data.getSubscriptionMap());
+        if (brokerInfo == null) {
+            shutdown();
+        }
     }
 
     /**
@@ -90,27 +98,35 @@ public class Consumer extends Client {
      */
     public void start(){
         running=true;
-        //向Brokers发送心跳
-        heartPool = new ScheduledThreadPoolExecutor(3);
-        heartPool.scheduleAtFixedRate(new Runnable() {
+        //初始化ThreadPool
+        heartPool = new ScheduledThreadPoolExecutor(3,new ThreadFactory() {
+            int i;
+
             @Override
-            public void run() {
-                while (running){
-                    sendHeartbeatToAllBroker();
-                }
+            public Thread newThread(@NotNull Runnable r) {
+                return new Thread(r, "consumer_Heart" + i++);
             }
-        },0,30, TimeUnit.SECONDS);
+        });
 
         //向NameServer发送心跳
         heartPool.scheduleAtFixedRate(new Runnable() {
             @Override
             public void run() {
-                while (running){
+                if (running){
                     sendHeartbeatToNameServer();
                 }
             }
         },0,30,TimeUnit.SECONDS);
 
+        //向所有brokers发心跳
+        heartPool.scheduleAtFixedRate(new Runnable() {
+            @Override
+            public void run() {
+                if (running){
+                    sendHeartbeatToAllBroker();
+                }
+            }
+        },0,30, TimeUnit.SECONDS);
     }
 
     /**

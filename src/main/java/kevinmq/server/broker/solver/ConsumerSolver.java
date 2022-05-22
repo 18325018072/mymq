@@ -153,10 +153,16 @@ public class ConsumerSolver {
     }
 
     public void shutdownConsumers(){
+        //shutdown所有consumer
         for (Consumer consumer : subTable.keySet()) {
             if (consumer!=null) {
                 consumer.shutdown();
             }
         }
+        //shutdown所有sender
+        for (QueueSender sender : senderTable.values()) {
+            sender.shutdown();
+        }
+        QueueSender.shutdownAllSenders();
     }
 }

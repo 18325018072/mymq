@@ -9,6 +9,7 @@ import kevinmq.message.Message;
 import kevinmq.server.broker.data.BrokerData;
 import kevinmq.server.broker.data.ConsumeQueue;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.LinkedBlockingQueue;
@@ -20,7 +21,7 @@ import java.util.concurrent.TimeUnit;
  * 处理Broker的 producer 相关事务
  * @author Kevin2
  */
-public class ProducerSolver {
+@Data public class ProducerSolver {
     private BrokerData brokerData;
 
     /**

@@ -45,7 +45,12 @@ public class CommitLog {
      */
     public Message removeMessage(int physicOffset) throws InterruptedException {
         MessageQueue messageQueue = data.get(physicOffset);
-        return messageQueue.queue.take();
+        try {
+            Message message = messageQueue.queue.take();
+            return message;
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     /**
@@ -60,7 +65,6 @@ public class CommitLog {
         }
         return size;
     }
-
 
     /**
      * 封装消息主体以及元数据的内部类。
