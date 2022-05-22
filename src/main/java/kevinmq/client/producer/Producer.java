@@ -22,7 +22,6 @@ public class Producer extends Client implements SendMessage {
 
     private String producerName = "Default Producer";
 
-
     /**
      * 发送同步消息
      *
