@@ -4,6 +4,7 @@ import kevinmq.client.consumer.Consumer;
 import kevinmq.client.consumer.process.ConsumeStatus;
 import kevinmq.client.consumer.process.MessageListener;
 import kevinmq.client.producer.Producer;
+import kevinmq.client.producer.ProducerImpl;
 import kevinmq.client.producer.SendCallback;
 import kevinmq.client.producer.res.SendResult;
 import kevinmq.message.Message;
@@ -27,7 +28,7 @@ public class TestKevinMqClient {
             public void run() {
                 //创建Producer
                 System.out.println("Producer Created");
-                Producer producer1 = new Producer("Producer No." + producerNum++);
+                Producer producer1 = new ProducerImpl("Producer No." + producerNum++);
                 //Producer以同步方式发送信息
                 producer1.sendSynchronously(new Message("運命を進め", "衣服", "上衣"));
                 producer1.sendSynchronously(new Message("運命を進め".getBytes(StandardCharsets.UTF_8), "衣服", "上衣"));
@@ -89,7 +90,7 @@ public class TestKevinMqClient {
 
     public static void main() {
     //创建Producer
-    Producer producer1=new Producer("Producer初号机");
+    Producer producer1=new ProducerImpl("Producer初号机");
     //Producer以同步方式发送信息
     producer1.sendSynchronously(new Message("運命を進め","衣服","上衣"));
     producer1.sendSynchronously(new Message("運命を進め".getBytes(StandardCharsets.UTF_8),"衣服","上衣"));

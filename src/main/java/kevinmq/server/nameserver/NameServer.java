@@ -192,10 +192,8 @@ public class NameServer {
         running = false;
         threadPool.shutdownNow();
         for (BrokerInfo brokerInfo : brokerInfoSet) {
-            if (brokerInfo.broker != null) {
-                    brokerInfo.broker.shutdownAllConsumers();
-                brokerInfo.broker.shutdown();
-            }
+            brokerInfo.broker.shutdownAllConsumers();
+            brokerInfo.broker.shutdown();
         }
         Store.getStore().save(new Record("NameServer", "shutdown", "---------------------------"));
         Store.getStore().flush();

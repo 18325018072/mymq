@@ -13,27 +13,28 @@ import java.util.Set;
 /**
  * 客户端，可以是 Producer 和 Consumer。
  * 包括了本地缓存的 topic 路由信息，以及查找 Broker 的方法
+ *
  * @author Kevin2
  */
-@Data public class Client {
+@Data
+public class Client {
     /**
      * 本地缓存的 topic 路由信息
      */
-    protected
-    Set<BrokerInfo> brokerInfo=new HashSet<>();
+    protected Set<BrokerInfo> brokerInfo = new HashSet<>();
 
     /**
      * 寻找 topic、tag 对应的 broker，找不到则返回null
      */
-    public Broker findBrokerByTopicTag(String topic, String tag){
-        Broker broker = findLocalBrokerByTopicTag(topic,tag);
-        if (broker==null) {
+    public Broker findBrokerByTopicTag(String topic, String tag) {
+        Broker broker = findLocalBrokerByTopicTag(topic, tag);
+        if (broker == null) {
             //本地找不到，去NameServer找
             BrokerInfo brokerInfo = NameServer.getNameServer().findBrokerInfoByTopicTag(topic, tag);
-            if (brokerInfo!=null){
+            if (brokerInfo != null) {
                 //本地没找到，而nameserver找到了，则添加到本地缓存
                 this.brokerInfo.add(brokerInfo);
-                broker=brokerInfo.broker;
+                broker = brokerInfo.broker;
             }
         }
         return broker;
@@ -45,7 +46,7 @@ import java.util.Set;
     public Broker findLocalBrokerByTopicTag(String topic, String tag) {
         for (BrokerInfo info : brokerInfo) {
             Set<String> tags = info.topicInfo.get(topic);
-            if (tags!=null&&tags.contains(tag)) {
+            if (tags != null && tags.contains(tag)) {
                 return info.broker;
             }
         }

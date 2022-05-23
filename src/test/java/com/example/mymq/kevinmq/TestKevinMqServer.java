@@ -4,6 +4,7 @@ import kevinmq.client.consumer.Consumer;
 import kevinmq.client.consumer.process.ConsumeStatus;
 import kevinmq.client.consumer.process.MessageListener;
 import kevinmq.client.producer.Producer;
+import kevinmq.client.producer.ProducerImpl;
 import kevinmq.client.producer.SendCallback;
 import kevinmq.client.producer.res.SendResult;
 import kevinmq.message.Message;
@@ -51,13 +52,8 @@ public class TestKevinMqServer {
                 if (pool != null) {
                     pool.shutdownNow();
                 }
-                try {
-                    NameServer.getNameServer().shutdown();
-                } catch (Exception e) {
-                    System.out.println("罪魁祸首");
-                }
+                NameServer.getNameServer().shutdown();
                 System.out.println("退出");
-                System.gc();
                 return;
             }
         }
@@ -66,10 +62,10 @@ public class TestKevinMqServer {
 
     public static void ConsumerGo() {
         Runnable consumerRunnable = new Runnable() {
+
             @Override
             public void run() {
                 //创建Consumer
-                System.out.println("Consumer Created");
                 Consumer consumer1 = new Consumer("Consumer No." + consumerNum++);
                 //Consumer订阅消息
                 consumer1.subscribe("衣服", "上衣");
@@ -93,7 +89,7 @@ public class TestKevinMqServer {
             @Override
             public void run() {
                 //创建Producer
-                Producer producer1 = new Producer("Producer No." + producerNum++);
+                Producer producer1 = new ProducerImpl("Producer No." + producerNum++);
                 //Producer以同步方式发送信息
                 producer1.sendSynchronously(new Message("一番運命を進め", "衣服", "上衣"));
                 producer1.sendSynchronously(new Message("に運命を進め".getBytes(StandardCharsets.UTF_8), "衣服", "上衣"));
@@ -106,7 +102,7 @@ public class TestKevinMqServer {
 
                     @Override
                     public void onFail(Exception e) {
-                        System.out.println("异步发送成功");
+                        System.out.println("异步发送失败");
                     }
                 });
                 //Producer发送信息，这些topic和tag的消息没有Broker能接受，所以白发了
@@ -114,26 +110,10 @@ public class TestKevinMqServer {
                 producer1.sendSynchronously(new Message("２運命を進め"));
             }
         };
-        pool = new ThreadPoolExecutor(10000, 20000,
+        pool = new ThreadPoolExecutor(10, 20000,
                 5, TimeUnit.SECONDS, new LinkedBlockingQueue<>());
-        for (int i = 0; i < 5000; i++) {
+        for (int i = 0; i < 2; i++) {
             pool.execute(producerRunnable);
         }
-    }
-
-    @Test
-    public void test() {
-        ScheduledThreadPoolExecutor threadPool = new ScheduledThreadPoolExecutor(3);
-        Runnable runnable = new Runnable() {
-            @Override
-            public void run() {
-                System.out.println(55);
-            }
-        };
-        threadPool.scheduleAtFixedRate(runnable, 0, 1, TimeUnit.SECONDS);
-        threadPool.scheduleAtFixedRate(runnable, 0, 1, TimeUnit.SECONDS);
-        threadPool.scheduleAtFixedRate(runnable, 0, 1, TimeUnit.SECONDS);
-        Scanner scanner = new Scanner(System.in);
-        String s = scanner.nextLine();
     }
 }

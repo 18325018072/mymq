@@ -14,6 +14,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
@@ -40,13 +41,13 @@ public class Consumer extends Client {
     private MessageProcessor processor;
     private boolean running = false;
     private ScheduledThreadPoolExecutor heartPool;
-    ThreadGroup tg=new ThreadGroup("totalThreadGroup");
+
+    private boolean localBrokerInfoInitialized = false;
 
 
     public Consumer(String name) {
         data.setConsumerName(name);
         processor = new MessageProcessor(name);
-        tg.destroy();
     }
 
     /**
@@ -57,6 +58,7 @@ public class Consumer extends Client {
     public void subscribe(String topic, String subExpression) {
         try {
             data.addSubscription(topic, subExpression);
+            //未启动时是无效的，因为不会发送心跳
             sendHeartbeatToAllBroker();
         } catch (Exception e) {
             throw new RuntimeException("subscription exception");
@@ -97,6 +99,7 @@ public class Consumer extends Client {
      * 开始心跳
      */
     public void start(){
+        System.out.println(data.getConsumerName()+"启动");
         running=true;
         //初始化ThreadPool
         heartPool = new ScheduledThreadPoolExecutor(30,new ThreadFactory() {
@@ -104,7 +107,7 @@ public class Consumer extends Client {
 
             @Override
             public Thread newThread(@NotNull Runnable r) {
-                return new Thread(r, "consumer_Heart" + i++);
+                return new Thread(r, data.getConsumerName()+"consumer_Heart" + i++);
             }
         });
 
@@ -112,21 +115,25 @@ public class Consumer extends Client {
         heartPool.scheduleAtFixedRate(new Runnable() {
             @Override
             public void run() {
-                if (running){
+                if (running) {
                     sendHeartbeatToNameServer();
+                    localBrokerInfoInitialized=true;
                 }
             }
-        },0,30,TimeUnit.SECONDS);
+        }, 0, 30, TimeUnit.SECONDS);
 
         //向所有brokers发心跳
         heartPool.scheduleAtFixedRate(new Runnable() {
             @Override
             public void run() {
-                if (running){
+                if (running) {
+                    while (!localBrokerInfoInitialized){
+                        //等待向NameServer发送的心跳初始化本地的broker
+                    }
                     sendHeartbeatToAllBroker();
                 }
             }
-        },0,30, TimeUnit.SECONDS);
+        }, 0, 30, TimeUnit.SECONDS);
     }
 
     /**
