@@ -13,10 +13,7 @@ import org.junit.jupiter.api.Test;
 
 import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.ScheduledThreadPoolExecutor;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
 /**
  * @author Kevin2
@@ -117,9 +114,9 @@ public class TestKevinMqServer {
                 producer1.sendSynchronously(new Message("２運命を進め"));
             }
         };
-        pool = new ThreadPoolExecutor(10, 20,
-                5, TimeUnit.SECONDS, new ArrayBlockingQueue<>(5));
-        for (int i = 0; i < 5; i++) {
+        pool = new ThreadPoolExecutor(10000, 20000,
+                5, TimeUnit.SECONDS, new LinkedBlockingQueue<>());
+        for (int i = 0; i < 5000; i++) {
             pool.execute(producerRunnable);
         }
     }

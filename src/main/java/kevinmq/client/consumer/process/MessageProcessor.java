@@ -7,10 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.ThreadFactory;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
 /**
  * 消息处理者，只能用一种方式来处理消息
@@ -23,8 +20,8 @@ public class MessageProcessor {
     /**
      * 处理消息的线程池
      */
-    private ThreadPoolExecutor threadPool = new ThreadPoolExecutor(20, 40,
-            30, TimeUnit.SECONDS, new ArrayBlockingQueue<>(100),
+    private ThreadPoolExecutor threadPool = new ThreadPoolExecutor(200, 4000,
+            30, TimeUnit.SECONDS, new LinkedBlockingQueue<>(),
             new ThreadFactory() {
                 int i = 0;
 

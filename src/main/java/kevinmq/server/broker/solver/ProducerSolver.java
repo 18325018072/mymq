@@ -27,7 +27,7 @@ import java.util.concurrent.TimeUnit;
     /**
      * 用于处理异步消息的线程池：长度无限，存活时间3分钟
      */
-    private ThreadPoolExecutor threadPoolForAsyncMes = new ThreadPoolExecutor(50, 500,
+    private ThreadPoolExecutor threadPoolForAsyncMes = new ThreadPoolExecutor(500, 5000,
             3, TimeUnit.MINUTES,
             new LinkedBlockingQueue<>(), new ThreadFactory() {
         int index = 0;

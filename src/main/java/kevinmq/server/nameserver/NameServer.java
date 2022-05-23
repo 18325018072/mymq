@@ -144,7 +144,7 @@ public class NameServer {
      */
     public void start() {
         running = true;
-        threadPool = new ScheduledThreadPoolExecutor(3, new ThreadFactory() {
+        threadPool = new ScheduledThreadPoolExecutor(30, new ThreadFactory() {
             int i;
 
             @Override

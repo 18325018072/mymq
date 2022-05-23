@@ -99,7 +99,7 @@ public class Consumer extends Client {
     public void start(){
         running=true;
         //初始化ThreadPool
-        heartPool = new ScheduledThreadPoolExecutor(3,new ThreadFactory() {
+        heartPool = new ScheduledThreadPoolExecutor(30,new ThreadFactory() {
             int i;
 
             @Override
