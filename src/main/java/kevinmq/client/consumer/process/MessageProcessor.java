@@ -1,7 +1,7 @@
 package kevinmq.client.consumer.process;
 
-import kevinmq.dao.FileStore;
 import kevinmq.dao.Record;
+import kevinmq.dao.RedisStore;
 import kevinmq.dao.Store;
 import kevinmq.message.Message;
 import lombok.Data;
@@ -54,7 +54,7 @@ public class MessageProcessor {
      */
     public void process(Message message) {
         threadPool.execute(() -> {
-            Store store= FileStore.getStore();
+            Store store= RedisStore.getStore();
             //消费
             ConsumeStatus res = messageListener.consumeMessage(message);
             //消费结果处理

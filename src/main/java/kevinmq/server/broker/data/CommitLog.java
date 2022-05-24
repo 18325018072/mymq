@@ -7,7 +7,9 @@ import lombok.NoArgsConstructor;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.concurrent.LinkedBlockingQueue;
 
 /**
@@ -23,7 +25,7 @@ public class CommitLog {
     /**
      * 消息主体以及元数据
      */
-    private ArrayList<MessageQueue> data=new ArrayList<>();
+    private List<MessageQueue> data= Collections.synchronizedList(new ArrayList<>());
 
     /**
      * 添加一条信息，并写入 msgQueue

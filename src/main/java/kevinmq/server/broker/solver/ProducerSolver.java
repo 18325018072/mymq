@@ -3,8 +3,8 @@ package kevinmq.server.broker.solver;
 import kevinmq.client.producer.SendCallback;
 import kevinmq.client.producer.res.SendResult;
 import kevinmq.client.producer.res.SendStatus;
-import kevinmq.dao.FileStore;
 import kevinmq.dao.Record;
+import kevinmq.dao.RedisStore;
 import kevinmq.dao.Store;
 import kevinmq.message.Message;
 import kevinmq.server.broker.data.BrokerData;
@@ -56,7 +56,7 @@ import java.util.concurrent.TimeUnit;
             return new SendResult(SendStatus.Broker_NotFound, msg, null);
         }
         //添加日志
-        Store store= FileStore.getStore();
+        Store store= RedisStore.getStore();
         store.save(new Record(producerId, "Send", msg));
         //通过consumeQueue存储数据
         queue.addMessage(msg);
@@ -77,7 +77,7 @@ import java.util.concurrent.TimeUnit;
                 return;
             }
             //添加日志
-            Store store= FileStore.getStore();
+            Store store= RedisStore.getStore();
             store.save(new Record(producerId, "Send", msg));
             //通过consumeQueue存储数据
             queue.addMessage(msg);

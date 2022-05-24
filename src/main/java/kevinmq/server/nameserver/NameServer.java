@@ -2,8 +2,8 @@ package kevinmq.server.nameserver;
 
 import kevinmq.client.consumer.Consumer;
 import kevinmq.client.consumer.data.SubscriptionData;
-import kevinmq.dao.FileStore;
 import kevinmq.dao.Record;
+import kevinmq.dao.RedisStore;
 import kevinmq.dao.Store;
 import kevinmq.server.broker.Broker;
 import kevinmq.server.broker.data.ConsumeQueue;
@@ -176,7 +176,7 @@ public class NameServer {
                 }
             }
         }, 0, 10, TimeUnit.SECONDS);
-        Store store= FileStore.getStore();
+        Store store= RedisStore.getStore();
         store.save(new Record("NameServer", "启动", null));
     }
 
@@ -190,7 +190,7 @@ public class NameServer {
             brokerInfo.broker.shutdownAllConsumers();
             brokerInfo.broker.shutdown();
         }
-        Store store= FileStore.getStore();
+        Store store= RedisStore.getStore();
         store.save(new Record("NameServer", "shutdown", "---------------------------"));
         store.flush();
     }

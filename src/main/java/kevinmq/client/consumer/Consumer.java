@@ -65,6 +65,9 @@ public class Consumer extends Client {
         }
     }
 
+    /**
+     * 注册回调函数（处理收到的消息的方法）
+     */
     public void registerMessageListener(MessageListener messageListener) {
         processor.registerMessageListener(messageListener);
     }

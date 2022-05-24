@@ -6,8 +6,8 @@ import kevinmq.client.consumer.data.SubscriptionData;
 import kevinmq.client.producer.Producer;
 import kevinmq.client.producer.SendCallback;
 import kevinmq.client.producer.res.SendResult;
-import kevinmq.dao.FileStore;
 import kevinmq.dao.Record;
+import kevinmq.dao.RedisStore;
 import kevinmq.dao.Store;
 import kevinmq.message.Message;
 import kevinmq.server.broker.data.BrokerData;
@@ -136,7 +136,7 @@ public class Broker {
         threadPool.shutdownNow();
         producerSolver.getThreadPoolForAsyncMes().shutdownNow();
         NameServer.getNameServer().removeBroker(this);
-        Store store = FileStore.getStore();
+        Store store= RedisStore.getStore();
 
         //日志记录
         store.save(new Record(brokerData.getBrokerName(), "shutdown", null));
@@ -190,7 +190,7 @@ public class Broker {
             }
         }, 0, 10, TimeUnit.SECONDS);
         //日志记录
-        Store store = FileStore.getStore();
+        Store store= RedisStore.getStore();
         store.save(new Record(brokerData.getBrokerName(), "启动", null));
     }
 

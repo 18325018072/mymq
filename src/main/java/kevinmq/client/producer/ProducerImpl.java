@@ -1,8 +1,8 @@
 package kevinmq.client.producer;
 
 import kevinmq.client.Client;
-import kevinmq.dao.FileStore;
 import kevinmq.dao.Record;
+import kevinmq.dao.RedisStore;
 import kevinmq.dao.Store;
 import kevinmq.server.broker.Broker;
 import kevinmq.message.Message;
@@ -31,7 +31,7 @@ public class ProducerImpl extends Client implements Producer {
      */
     @Override
     public SendResult sendSynchronously(Message msg) {
-        Store store= FileStore.getStore();
+        Store store= RedisStore.getStore();
         msg.setProducerName(producerName);
         //查找本地的 topic 路由信息
         Broker desBroker = findBrokerByTopicTag(msg.getTopic(), msg.getTag());
@@ -59,7 +59,7 @@ public class ProducerImpl extends Client implements Producer {
      */
     @Override
     public void sendAsync(Message msg, SendCallback callback) {
-        Store store= FileStore.getStore();
+        Store store= RedisStore.getStore();
         //查找本地的 topic 路由信息
         Broker broker = findBrokerByTopicTag(msg.getTopic(), msg.getTag());
         if (broker == null) {
