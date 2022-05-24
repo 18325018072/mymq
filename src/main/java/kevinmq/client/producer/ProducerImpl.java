@@ -1,6 +1,7 @@
 package kevinmq.client.producer;
 
 import kevinmq.client.Client;
+import kevinmq.dao.FileStore;
 import kevinmq.dao.Record;
 import kevinmq.dao.Store;
 import kevinmq.server.broker.Broker;
@@ -30,19 +31,20 @@ public class ProducerImpl extends Client implements Producer {
      */
     @Override
     public SendResult sendSynchronously(Message msg) {
+        Store store= FileStore.getStore();
         msg.setProducerName(producerName);
         //查找本地的 topic 路由信息
         Broker desBroker = findBrokerByTopicTag(msg.getTopic(), msg.getTag());
         if (desBroker == null) {
             //没找到，返回错误信息
-            Store.getStore().save(new Record(producerName,"Fail to send",SendStatus.Broker_NotFound));
+            store.save(new Record(producerName,"Fail to send",SendStatus.Broker_NotFound));
             return new SendResult(SendStatus.Broker_NotFound, msg, null);
         }
         //找到目的broker了
         try {
             //同步：等待Broker返回
             SendResult sendResult = desBroker.receiveMessage(msg, producerName);
-            Store.getStore().save(new Record(producerName,"Send",msg));
+            store.save(new Record(producerName,"Send",msg));
             return sendResult;
         } catch (Exception e) {
             //出现异常
@@ -57,16 +59,17 @@ public class ProducerImpl extends Client implements Producer {
      */
     @Override
     public void sendAsync(Message msg, SendCallback callback) {
+        Store store= FileStore.getStore();
         //查找本地的 topic 路由信息
         Broker broker = findBrokerByTopicTag(msg.getTopic(), msg.getTag());
         if (broker == null) {
             //如果没找到broker
-            Store.getStore().save(new Record(producerName,"Fail to sendAsync",SendStatus.Broker_NotFound));
+           store.save(new Record(producerName,"Fail to sendAsync",SendStatus.Broker_NotFound));
             return ;
         }
         //发送
         broker.receiveMessageAsync(msg, producerName, callback);
-        Store.getStore().save(new Record(producerName,"sendAsync",msg));
+        store.save(new Record(producerName,"sendAsync",msg));
     }
 
 

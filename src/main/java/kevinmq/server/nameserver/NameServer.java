@@ -2,6 +2,7 @@ package kevinmq.server.nameserver;
 
 import kevinmq.client.consumer.Consumer;
 import kevinmq.client.consumer.data.SubscriptionData;
+import kevinmq.dao.FileStore;
 import kevinmq.dao.Record;
 import kevinmq.dao.Store;
 import kevinmq.server.broker.Broker;
@@ -175,14 +176,8 @@ public class NameServer {
                 }
             }
         }, 0, 10, TimeUnit.SECONDS);
-        //Todo
-//        threadPool.scheduleAtFixedRate(new Runnable() {
-//            @Override
-//            public void run() {
-//                System.out.println("NameServer Running");
-//            }
-//        }, 0, 2, TimeUnit.SECONDS);
-        Store.getStore().save(new Record("NameServer", "启动", null));
+        Store store= FileStore.getStore();
+        store.save(new Record("NameServer", "启动", null));
     }
 
     /**
@@ -195,7 +190,8 @@ public class NameServer {
             brokerInfo.broker.shutdownAllConsumers();
             brokerInfo.broker.shutdown();
         }
-        Store.getStore().save(new Record("NameServer", "shutdown", "---------------------------"));
-        Store.getStore().flush();
+        Store store= FileStore.getStore();
+        store.save(new Record("NameServer", "shutdown", "---------------------------"));
+        store.flush();
     }
 }

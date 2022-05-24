@@ -1,5 +1,6 @@
 package kevinmq.client.consumer.process;
 
+import kevinmq.dao.FileStore;
 import kevinmq.dao.Record;
 import kevinmq.dao.Store;
 import kevinmq.message.Message;
@@ -53,13 +54,14 @@ public class MessageProcessor {
      */
     public void process(Message message) {
         threadPool.execute(() -> {
+            Store store= FileStore.getStore();
             //消费
             ConsumeStatus res = messageListener.consumeMessage(message);
             //消费结果处理
             if (res == ConsumeStatus.Consume_Fail) {
-                Store.getStore().save(new Record(consumerName, "Fail to consume", message));
+                store.save(new Record(consumerName, "Fail to consume", message));
             } else if (res == ConsumeStatus.Consume_Success) {
-                Store.getStore().save(new Record(consumerName, "consumed", message));
+                store.save(new Record(consumerName, "consumed", message));
             }
             if (threadPool.getQueue().size() > PROCESSOR_BUSY_LIMIT) {
                 //TODO 消息处理压力较大,让broker慢一点

@@ -48,7 +48,13 @@
       <artifactId>annotations</artifactId>  
       <version>RELEASE</version>  
       <scope>compile</scope> 
-    </dependency> 
+    </dependency>
+      <dependency>
+          <groupId>redis.clients</groupId>
+          <artifactId>jedis</artifactId>
+          <version>4.2.3</version>
+          <scope>test</scope>
+      </dependency>
   </dependencies>  
   <build> 
     <plugins> 
